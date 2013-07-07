@@ -37,6 +37,17 @@ class Nethack < Formula
       /^#\s*define HACKDIR.*$/,
       "#define HACKDIR \"#{libexec}\""
 
+    # Enable wizard mode for the current user
+    wizard = ENV['USER']
+
+    inreplace "include/config.h",
+      /^#\s*define\s+WIZARD\s+"wizard"/,
+      "#define WIZARD \"#{wizard}\""
+
+    inreplace "include/config.h",
+      /^#\s*define\s+WIZARD_NAME\s+"wizard"/,
+      "#define WIZARD_NAME \"#{wizard}\""
+
     # Make the data first, before we munge the CFLAGS
     system "cd dat;make"
 

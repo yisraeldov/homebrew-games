@@ -2,8 +2,8 @@ require 'formula'
 
 class Unnethack < Formula
   homepage 'http://sourceforge.net/apps/trac/unnethack/'
-  url 'https://downloads.sourceforge.net/project/unnethack/unnethack/4.0.0/unnethack-4.0.0-20120401.tar.gz'
-  sha1 'c7415284b27a585024b56858c87e927b36bc6ad5'
+  url 'http://netcologne.dl.sourceforge.net/project/unnethack/unnethack/5.1.0/unnethack-5.1.0-20131208.tar.gz'
+  sha1 '8535f69eca4f510a29dd1bf869aa55d6dea4664d'
 
   head 'http://unnethack.svn.sourceforge.net/svnroot/unnethack/trunk'
 

@@ -10,11 +10,11 @@ class PuzzlesHeadDownloadStrategy < SubversionDownloadStrategy
 end
 
 class Puzzles < Formula
-  depends_on 'halibut'
   homepage 'http://www.chiark.greenend.org.uk/~sgtatham/puzzles/'
-  head 'svn://svn.tartarus.org/sgt/puzzles', :using => PuzzlesHeadDownloadStrategy
   url 'svn://svn.tartarus.org/sgt/puzzles@10107', :using => PuzzlesHeadDownloadStrategy
-  sha1 ''
+  head 'svn://svn.tartarus.org/sgt/puzzles', :using => PuzzlesHeadDownloadStrategy
+
+  depends_on 'halibut'
 
   def install
     ENV.deparallelize
@@ -31,10 +31,5 @@ class Puzzles < Formula
     To symlink into ~/Applications, you can do:
       brew linkapps
     EOS
-  end
-
-  test do
-    # I don't really know how to test this one. Advice is welcome.
-    system "true"
   end
 end

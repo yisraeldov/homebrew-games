@@ -19,17 +19,19 @@ class Freeciv < Formula
     args = ["--disable-debug", "--disable-dependency-tracking",
             "--prefix=#{prefix}"]
 
-    unless build.include? 'disable-nls'
+    if build.include? 'disable-nls'
+      args << "--disable-nls"
+    else
       gettext = Formula.factory('gettext')
       args << "CFLAGS=-I#{gettext.include}"
       args << "LDFLAGS=-L#{gettext.lib}"
     end
 
     system "./configure", *args
-    system "make install"
+    system "make", "install"
   end
 
   def test
-    system "#{bin}/freeciv-server -v"
+    system "#{bin}/freeciv-server", "-v"
   end
 end

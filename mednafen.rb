@@ -2,17 +2,11 @@ require 'formula'
 
 class Mednafen < Formula
   homepage 'http://mednafen.sourceforge.net/'
-  url 'http://forum.fobby.net/index.php?t=getfile&id=450'
-  sha1 '6948b0f06d72f8056690d229581e94408d40c918'
-  version '0.9.28-WIP'
+  url 'http://forum.fobby.net/index.php?t=getfile&id=572'
+  sha1 'aa57533321b79ae63f5a64e2bbbdb31a397902d3'
+  version '0.9.32.1-WIP'
 
-  fails_with :clang do
-    build 421
-    cause <<-EOS.undent
-    The SNES module fails to build with clang; in addition, the mednafen
-    binary segfaults when a game launches if compiled without SNES support.
-    EOS
-  end
+  option 'with-snes', 'Build with SNES support'
 
   depends_on 'pkg-config' => :build
   depends_on 'sdl'
@@ -20,7 +14,14 @@ class Mednafen < Formula
   depends_on 'libsndfile'
 
   def install
+    args = %W[--prefix=#{prefix} --disable-dependency-tracking]
+    args << "--disable-snes" if ENV.compiler == :clang
     system "./configure", "--prefix=#{prefix}", "--disable-dependency-tracking"
     system "make install"
+  end
+
+  def caveats; <<-EOS.undent
+    The SNES module will not be compiled if you use clang as the compiler.
+    EOS
   end
 end

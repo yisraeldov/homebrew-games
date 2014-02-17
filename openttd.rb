@@ -26,11 +26,13 @@ class Openttd < Formula
   depends_on 'xz'
   depends_on 'pkg-config' => :build
 
-  # Fixes a build issue on 10.9; already fixed upstream
   def patches
     p = {
       :p0 => [
+        # Fixes a build issue on 10.9; already fixed upstream
         'https://trac.macports.org/export/117147/trunk/dports/games/openttd/files/patch-src__video__cocoa__cocoa_v.mm-10_9.diff',
+        # Ensures a deployment target is not set on 10.9;
+        # TODO report this upstream
         'https://trac.macports.org/export/117147/trunk/dports/games/openttd/files/patch-config.lib-remove-deployment-target.diff'
       ]
     }

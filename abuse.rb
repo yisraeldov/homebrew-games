@@ -22,11 +22,12 @@ class Abuse < Formula
 
   def install
     # Hack to work with newer versions of automake
-    inreplace 'bootstrap', '11 10 9 8 7 6 5', '$(seq -s " " 5 99)'
+    inreplace "bootstrap", '11 10 9 8 7 6 5', '$(seq -s " " 5 99)'
 
     # Add SDL.m4 to aclocal includes
-    inreplace 'bootstrap', 'aclocal${amvers} ${aclocalflags}',
-      'aclocal${amvers} ${aclocalflags} -I/usr/local/share/aclocal'
+    inreplace "bootstrap",
+      "aclocal${amvers} ${aclocalflags}",
+      "aclocal${amvers} ${aclocalflags} -I#{HOMEBREW_PREFIX}/share/aclocal"
 
     # undefined
     inreplace 'src/net/fileman.cpp', 'ushort', 'unsigned short'
@@ -41,11 +42,12 @@ class Abuse < Formula
       '#include <OpenGL/gl.h>'
 
     system "./bootstrap"
-    system "./configure", "--prefix=#{prefix}", "--disable-debug",
-                          "--with-assetdir=#{share}/abuse",
-                          "--disable-dependency-tracking",
+    system "./configure", "--disable-dependency-tracking",
+                          "--disable-debug",
+                          "--prefix=#{prefix}",
                           "--disable-sdltest",
-                          "--with-sdl-prefix=#{HOMEBREW_PREFIX}"
+                          "--with-assetdir=#{share}/abuse",
+                          "--with-sdl-prefix=#{Formula['sdl'].opt_prefix}"
 
     # Use Framework OpenGL, not libGl
     %w[ . src src/imlib src/lisp src/net src/sdlport ].each do |p|
@@ -55,7 +57,7 @@ class Abuse < Formula
     system "make"
 
     bin.install 'src/abuse-tool'
-    libexec.install_p 'src/abuse', 'abuse-bin'
+    libexec.install 'src/abuse' => 'abuse-bin'
     (share+'abuse').install Dir["data/*"] - %w(data/Makefile data/Makefile.am data/Makefile.in)
     # Use a startup script to find the game data
     (bin+'abuse').write startup_script

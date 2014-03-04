@@ -1,7 +1,7 @@
 require 'formula'
 
 class Frotz < Formula
-  url 'http://downloads.sourceforge.net/project/frotz/frotz/2.43/frotz-2.43d.tar.gz'
+  url 'https://downloads.sourceforge.net/project/frotz/frotz/2.43/frotz-2.43d.tar.gz'
   homepage 'http://frotz.sourceforge.net/'
   sha1 'e0986ca35a7f8c7dade1dc534701e883eee8b5ae'
   head 'git://frotz.git.sourceforge.net/gitroot/frotz/frotz'

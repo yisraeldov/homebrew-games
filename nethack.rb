@@ -13,7 +13,7 @@ require 'formula'
 
 class Nethack < Formula
   homepage 'http://www.nethack.org/index.html'
-  url 'http://downloads.sourceforge.net/project/nethack/nethack/3.4.3/nethack-343-src.tgz'
+  url 'https://downloads.sourceforge.net/project/nethack/nethack/3.4.3/nethack-343-src.tgz'
   version '3.4.3'
   sha1 'c26537093c38152bc0fbcec20468d975b35f59fd'
 

@@ -2,7 +2,7 @@ require 'formula'
 
 class Dosbox < Formula
   homepage 'http://www.dosbox.com/'
-  url 'http://downloads.sourceforge.net/project/dosbox/dosbox/0.74/dosbox-0.74.tar.gz'
+  url 'https://downloads.sourceforge.net/project/dosbox/dosbox/0.74/dosbox-0.74.tar.gz'
   sha1 '2d99f0013350efb29b769ff19ddc8e4d86f4e77e'
 
   depends_on :libpng

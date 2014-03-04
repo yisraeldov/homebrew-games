@@ -27,7 +27,7 @@ class Xu4 < Formula
 
     cd 'src' do
       # Copy over SDL's ObjC main files
-      `cp -R #{Formula.factory('sdl').libexec}/* macosx`
+      `cp -R #{Formula["sdl"].libexec}/* macosx`
 
       if MacOS::Xcode.version >= "4.3"
         sdk = MacOS::Xcode.prefix/"Platforms/MacOSX.platform/Developer/SDKs/MacOSX#{MacOS.version}.sdk"

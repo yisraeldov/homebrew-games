@@ -15,7 +15,7 @@ class Mupen64plus < Formula
   depends_on 'sdl'
   depends_on :freetype unless build.include? 'disable-osd'
   depends_on 'libsamplerate' if build.include? 'with-src'
-  depends_on 'speex' if build.include? 'with-speex'
+  depends_on 'speex' => :optional
 
   def install
     commonArgs = ["install", "PREFIX=#{prefix}", "INSTALL_STRIP_FLAG=-S"]

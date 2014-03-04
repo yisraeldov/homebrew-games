@@ -2,7 +2,7 @@ require 'formula'
 
 class Slashem < Formula
   homepage 'http://slashem.sourceforge.net'
-  url 'http://downloads.sourceforge.net/project/slashem/slashem-source/0.0.8E0F1/se008e0f1.tar.gz'
+  url 'https://downloads.sourceforge.net/project/slashem/slashem-source/0.0.8E0F1/se008e0f1.tar.gz'
   sha1 'eec6615f8ed04691a996ef62a7305f6812e6ae26'
   version "0.0.8E0F1"
 

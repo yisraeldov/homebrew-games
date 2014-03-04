@@ -2,7 +2,7 @@ require 'formula'
 
 class Supertux < Formula
   homepage 'http://supertux.lethargik.org/'
-  url 'http://downloads.sf.net/project/supertux.berlios/supertux-0.1.3.tar.bz2'
+  url 'https://downloads.sf.net/project/supertux.berlios/supertux-0.1.3.tar.bz2'
   sha1 'ad783011fbf15a8a56ca8680769a8c2a15abc515'
 
   depends_on 'sdl'
@@ -13,7 +13,7 @@ class Supertux < Formula
   depends_on 'libvorbis'
 
   devel do
-    url 'http://downloads.sf.net/project/supertux.berlios/supertux-0.3.3.tar.bz2'
+    url 'https://downloads.sf.net/project/supertux.berlios/supertux-0.3.3.tar.bz2'
     sha1 'f89214fd5d997b62753fbba7e1d089d81513f2de'
 
     depends_on 'cmake' => :build

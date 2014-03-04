@@ -4,9 +4,10 @@ class Inform6 < Formula
   homepage 'http://www.inform-fiction.org/inform6.html'
   url 'http://ifarchive.flavorplex.com/if-archive/infocom/compilers/inform6/source/inform-6.32.1.tar.gz'
   sha1 '251cf057ddbf750a286802d2cfbccf5e80e25295'
-  head 'https://github.com/DavidGriffith/inform6unix.git'
 
-  if build.head?
+  head do
+    url 'https://github.com/DavidGriffith/inform6unix.git'
+
     depends_on :autoconf
     depends_on :automake
     depends_on :libtool

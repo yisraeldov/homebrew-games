@@ -12,15 +12,13 @@ class Supertux < Formula
   depends_on 'libogg'
   depends_on 'libvorbis'
 
-  if build.devel?
-    depends_on 'cmake' => :build
-    depends_on 'glew'
-    depends_on 'boost'
-  end
-
   devel do
     url 'http://downloads.sf.net/project/supertux.berlios/supertux-0.3.3.tar.bz2'
     sha1 'f89214fd5d997b62753fbba7e1d089d81513f2de'
+
+    depends_on 'cmake' => :build
+    depends_on 'glew'
+    depends_on 'boost'
   end
 
   fails_with :clang do

@@ -1,20 +1,5 @@
 require 'formula'
 
-class Opengfx < Formula
-  url 'http://bundles.openttdcoop.org/opengfx/releases/0.4.7/opengfx-0.4.7.zip'
-  sha1 '401967470bd6f3f33180416f48a6a41a00fbeb29'
-end
-
-class Opensfx < Formula
-  url 'http://bundles.openttdcoop.org/opensfx/releases/0.2.3/opensfx-0.2.3.zip'
-  sha1 'bfbfeddb91ff32a58a68488382636f38125c48f4'
-end
-
-class Openmsx < Formula
-  url 'http://bundles.openttdcoop.org/openmsx/releases/0.3.1/openmsx-0.3.1.zip'
-  sha1 'e9c4203923bb9c974ac67886bd00b7090658b961'
-end
-
 class Openttd < Formula
   homepage 'http://www.openttd.org/'
   url 'http://binaries.openttd.org/releases/1.3.3/openttd-1.3.3-source.tar.gz'
@@ -25,6 +10,21 @@ class Openttd < Formula
   depends_on 'lzo'
   depends_on 'xz'
   depends_on 'pkg-config' => :build
+
+  resource 'opengfx' do
+    url 'http://bundles.openttdcoop.org/opengfx/releases/0.4.7/opengfx-0.4.7.zip'
+    sha1 '401967470bd6f3f33180416f48a6a41a00fbeb29'
+  end
+
+  resource 'opensfx' do
+    url 'http://bundles.openttdcoop.org/opensfx/releases/0.2.3/opensfx-0.2.3.zip'
+    sha1 'bfbfeddb91ff32a58a68488382636f38125c48f4'
+  end
+
+  resource 'openmsx' do
+    url 'http://bundles.openttdcoop.org/openmsx/releases/0.3.1/openmsx-0.3.1.zip'
+    sha1 'e9c4203923bb9c974ac67886bd00b7090658b961'
+  end
 
   def patches
     p = {
@@ -42,9 +42,9 @@ class Openttd < Formula
     system "./configure", "--prefix-dir=#{prefix}"
     system "make bundle"
 
-    Opengfx.new.brew { (buildpath/'bundle/OpenTTD.app/Contents/Resources/data/opengfx').install Dir['*'] }
-    Opensfx.new.brew { (buildpath/'bundle/OpenTTD.app/Contents/Resources/data/opensfx').install Dir['*'] }
-    Openmsx.new.brew { (buildpath/'bundle/OpenTTD.app/Contents/Resources/gm/openmsx').install Dir['*'] }
+    (buildpath/'bundle/OpenTTD.app/Contents/Resources/data/opengfx').install resource('opengfx')
+    (buildpath/'bundle/OpenTTD.app/Contents/Resources/data/opensfx').install resource('opensfx')
+    (buildpath/'bundle/OpenTTD.app/Contents/Resources/gm/openmsx').install resource('openmsx')
 
     prefix.install 'bundle/OpenTTD.app'
   end

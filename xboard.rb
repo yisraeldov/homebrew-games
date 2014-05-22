@@ -1,10 +1,10 @@
 require 'formula'
 
 class Xboard < Formula
-  url 'http://ftpmirror.gnu.org/xboard/xboard-4.7.1.tar.gz'
-  mirror 'http://ftp.gnu.org/gnu/xboard/xboard-4.7.1.tar.gz'
+  url 'http://ftpmirror.gnu.org/xboard/xboard-4.7.3.tar.gz'
+  mirror 'http://ftp.gnu.org/gnu/xboard/xboard-4.7.3.tar.gz'
   homepage 'http://www.gnu.org/software/xboard/'
-  sha1 '0f23e01561fedb1c05a72734f37fd3fce5a7c5aa'
+  sha1 'dab9a69f3c8afd70a7a2e5e31f48d31fd9fbbabb'
 
   depends_on 'pkg-config' => :build
   depends_on 'fairymax' => :recommended

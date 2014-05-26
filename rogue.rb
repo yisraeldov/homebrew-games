@@ -23,5 +23,6 @@ class Rogue < Formula
     system "make install"
     man6.install gzip("rogue.6")
     libexec.mkdir
+    mkdir_p var/"rogue"
   end
 end

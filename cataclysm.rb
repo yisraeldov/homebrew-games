@@ -6,6 +6,8 @@ class Cataclysm < Formula
   sha1 '019493366fe7f7a27f4ef77f11d6f3c3133ed7ea'
   version '0.A'
 
+  head "https://github.com/CleverRaven/Cataclysm-DDA.git"
+
   needs :cxx11
 
   depends_on "gettext"

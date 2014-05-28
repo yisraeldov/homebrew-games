@@ -2,12 +2,23 @@ require 'formula'
 
 class Cataclysm < Formula
   homepage 'http://www.cataclysmdda.com/'
-  url 'https://github.com/TheDarklingWolf/Cataclysm-DDA/archive/0.5.zip'
-  sha1 '91250b0855cc59e1f4f93e59871a1a12bdfa1024'
+  url 'https://github.com/CleverRaven/Cataclysm-DDA/archive/0.A.tar.gz'
+  sha1 '019493366fe7f7a27f4ef77f11d6f3c3133ed7ea'
+  version '0.A'
+
+  needs :cxx11
+
+  depends_on "gettext"
 
   def install
-    system "make", "NATIVE=osx", "CXX=#{ENV.cxx}", "LD=#{ENV.cxx}",
-      "CXXFLAGS=#{ENV.cxxflags}"
+    args = %W[
+      NATIVE=osx RELEASE=1
+      CXX=#{ENV.cxx} LD=#{ENV.cxx} CXXFLAGS=#{ENV.cxxflags}
+    ]
+
+    args << "CLANG=1" if ENV.compiler == :clang
+
+    system "make", *args
 
     # no make install, so we have to do it ourselves
     libexec.install "cataclysm", "data"

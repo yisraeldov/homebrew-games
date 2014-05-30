@@ -5,6 +5,7 @@ class Glulxe < Formula
   url 'http://www.eblong.com/zarf/glulx/glulxe-050.tar.gz'
   version '0.5.0'
   sha1 '2b6a8c4494f712667cc2aa4147a49842997c3696'
+  head 'https://github.com/erkyrath/glulxe.git'
 
   # http://www.eblong.com/zarf/glk/index.html
   resource 'glkterm' do

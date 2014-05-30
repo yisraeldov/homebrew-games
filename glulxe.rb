@@ -2,9 +2,9 @@ require 'formula'
 
 class Glulxe < Formula
   homepage 'http://www.eblong.com/zarf/glulx/'
-  url 'http://www.eblong.com/zarf/glulx/glulxe-050.tar.gz'
-  version '0.5.0'
-  sha1 '2b6a8c4494f712667cc2aa4147a49842997c3696'
+  url 'http://eblong.com/zarf/glulx/glulxe-052.tar.gz'
+  version '0.5.2'
+  sha1 '492b501dc297e8e03273e1fdaa2e8e7aaee2b899'
   head 'https://github.com/erkyrath/glulxe.git'
 
   # http://www.eblong.com/zarf/glk/index.html

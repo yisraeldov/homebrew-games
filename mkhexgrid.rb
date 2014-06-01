@@ -12,7 +12,8 @@ class Mkhexgrid < Formula
     inreplace "Makefile" do |s|
       s.change_make_var! "DESTDIR", prefix
       s.change_make_var! "CC", ENV.cc
-      s.gsub! /install (.*) -o 0 -g 0/, "install \1"
+      # don't chown/chgrp the installed files
+      s.gsub! "-o 0 -g 0", ""
     end
     inreplace "mkhexgrid.cpp" do |s|
       s.sub! "catch (exception &e)", "catch (std::exception &e)"

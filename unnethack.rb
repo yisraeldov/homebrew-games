@@ -2,10 +2,10 @@ require 'formula'
 
 class Unnethack < Formula
   homepage 'http://sourceforge.net/apps/trac/unnethack/'
-  url 'https://netcologne.dl.sourceforge.net/project/unnethack/unnethack/5.1.0/unnethack-5.1.0-20131208.tar.gz'
+  url 'https://downloads.sourceforge.net/project/unnethack/unnethack/5.1.0/unnethack-5.1.0-20131208.tar.gz'
   sha1 '8535f69eca4f510a29dd1bf869aa55d6dea4664d'
 
-  head 'http://svn.code.sf.net/p/unnethack/code/trunk'
+  head 'https://github.com/UnNetHack/UnNetHack.git'
 
   # directory for temporary level data of running games
   skip_clean "var/unnethack/level"

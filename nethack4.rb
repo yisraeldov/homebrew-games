@@ -42,6 +42,10 @@ class Nethack4 < Formula
   end
 
   def install
+    # Prevents a crash when selling to a shopkeeper
+    ENV.refurbish_args
+    ENV.O0
+
     # buildsystem hardcodes some paths: http://trac.nethack4.org/ticket/531
     inreplace "aimake" do |s|
       s.gsub! "staterootdir => 'spath:/var'", "staterootdir => 'spath:#{var}'"

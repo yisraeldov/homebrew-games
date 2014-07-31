@@ -6,7 +6,7 @@ class Mkhexgrid < Formula
   sha1 "3b8e0be3636f90a3217a5e3556bdaf7bb0c49116"
 
   depends_on "boost"
-  depends_on "gd" => "with-freetype"
+  depends_on "gd"
 
   def install
     inreplace "Makefile" do |s|

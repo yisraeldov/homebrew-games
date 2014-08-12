@@ -5,8 +5,9 @@ class Brogue < Formula
 
   # The OS X version doesn't contain a Makefile, so we
   # need to download the Linux version
-  url 'https://sites.google.com/site/broguegame/brogue-linux-1.7.3.tar.gz'
-  sha1 'acd9d3f107518cbbcd8ad974fa6c261d6439fb8d'
+  url 'https://sites.google.com/site/broguegame/brogue-1.7.4-linux-amd64.tbz2'
+  sha1 'd2a7f74b040fe29dee81cb1ff8e78f8ee807c1c0'
+  version "1.7.4"
 
   def patches
     # put the highscores file in HOMEBREW_PREFIX/var/brogue/ instead of a
@@ -17,22 +18,20 @@ class Brogue < Formula
   def install
     mkdir_p "#{var}/brogue"
 
-    cd 'brogue-1.7.3' do
-      doc.install 'Readme.rtf' => 'README.rtf'
-      doc.install 'agpl.txt' => 'COPYING'
+    doc.install 'Readme.rtf' => 'README.rtf'
+    doc.install 'agpl.txt' => 'COPYING'
 
-      system "make", "clean"
-      system "make", "curses"
+    system "make", "clean"
+    system "make", "curses"
 
-      # The files are installed in libexec
-      # and the provided `brogue` shell script,
-      # which is just a convenient way to launch the game,
-      # is placed in the `bin` directory.
-      inreplace 'brogue', /`dirname \$0`\/bin$/, libexec
-      bin.install 'brogue'
-      libexec.install 'bin/brogue'
-      libexec.install 'bin/keymap'
-    end
+    # The files are installed in libexec
+    # and the provided `brogue` shell script,
+    # which is just a convenient way to launch the game,
+    # is placed in the `bin` directory.
+    inreplace 'brogue', /`dirname \$0`\/bin$/, libexec
+    bin.install 'brogue'
+    libexec.install 'bin/brogue'
+    libexec.install 'bin/keymap'
   end
 
   def caveats; <<-EOS.undent
@@ -46,8 +45,8 @@ class Brogue < Formula
   end
 end
 __END__
---- a/brogue-1.7.3/src/platform/platformdependent.c	2013-10-08 21:53:15.000000000 +0200
-+++ b/brogue-1.7.3/src/platform/platformdependent.c	2013-10-08 21:55:22.000000000 +0200
+--- a/src/platform/platformdependent.c	2013-10-08 21:53:15.000000000 +0200
++++ b/src/platform/platformdependent.c	2013-10-08 21:55:22.000000000 +0200
 @@ -75,7 +75,7 @@
  	short i;
  	FILE *scoresFile;

@@ -41,10 +41,15 @@ class Nethack4 < Formula
     sha1 "ba577f5eeb3da388c9abdbdabc06bbf29b229eff"
   end
 
+  # Fixes a buffer overflow which causes a crash in yes/no prompts
+  # Upstream commit: http://trac.nethack4.org/changeset/8771d1b602666bf76b6b47ddf95487b648e78d93/
+  patch :p0 do
+    url "https://gist.githubusercontent.com/mistydemeo/be4f4c8010aa1662ef43/raw/609075f06550f65740c4d6f1bd0196de3cc79c6b/shopkeeper.patch"
+    sha1 "03a67892a2c7495a411a728c194bfaf2d502db7b"
+  end
+
   def install
-    # Prevents a crash when selling to a shopkeeper
     ENV.refurbish_args
-    ENV.O0
 
     # buildsystem hardcodes some paths: http://trac.nethack4.org/ticket/531
     inreplace "aimake" do |s|

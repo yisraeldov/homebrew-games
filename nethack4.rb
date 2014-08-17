@@ -48,19 +48,21 @@ class Nethack4 < Formula
     sha1 "03a67892a2c7495a411a728c194bfaf2d502db7b"
   end
 
+  # Adds support for an autotools-like install prefix
+  # Upstream commit: http://trac.nethack4.org/changeset/04b98cb1c8d1dc0786ed2d3fbecf87f32a7dea3f/
+  patch :p0 do
+    url "https://gist.githubusercontent.com/mistydemeo/7a52c503ecef16ea8194/raw/58e28b36de5a0a75ed3ca0d6a2b1978241db8052/nethack4-prefix.patch"
+    sha1 "4449fbd990a3423941d1547c4720ec6b0e4dc750"
+  end
+
   def install
     ENV.refurbish_args
-
-    # buildsystem hardcodes some paths: http://trac.nethack4.org/ticket/531
-    inreplace "aimake" do |s|
-      s.gsub! "staterootdir => 'spath:/var'", "staterootdir => 'spath:#{var}'"
-      s.gsub! "gamesbindir => '$installdir/games'", "gamesbindir => '$installdir/bin'"
-    end
 
     mkdir "build"
     cd "build" do
       system "../aimake", "--with=jansson", "--without=gui",
-        "-i", prefix, "--directory-layout=fhs_unmanaged"
+        "-i", prefix, "--directory-layout=prefix",
+        "--override-directory", "staterootdir=#{var}"
     end
   end
 end

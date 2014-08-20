@@ -9,11 +9,9 @@ class Brogue < Formula
   sha1 'd2a7f74b040fe29dee81cb1ff8e78f8ee807c1c0'
   version "1.7.4"
 
-  def patches
-    # put the highscores file in HOMEBREW_PREFIX/var/brogue/ instead of a
-    # version-dependent location.
-    DATA
-  end
+  # put the highscores file in HOMEBREW_PREFIX/var/brogue/ instead of a
+  # version-dependent location.
+  patch :DATA
 
   def install
     mkdir_p "#{var}/brogue"
@@ -44,6 +42,7 @@ class Brogue < Formula
     system "#{bin}/brogue", "--version"
   end
 end
+
 __END__
 --- a/src/platform/platformdependent.c	2013-10-08 21:53:15.000000000 +0200
 +++ b/src/platform/platformdependent.c	2013-10-08 21:55:22.000000000 +0200

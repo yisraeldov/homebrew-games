@@ -7,18 +7,16 @@ class GnuShogi < Formula
 
   depends_on :x11
 
-  def patches
-    # gcc 4.2.1 flags the following error
-    # In file included from attacks.c:32:
-    # gnushogi.h:144: error: conflicting types for ‘setlinebuf’
-    # /usr/include/stdio.h:351: error: previous declaration of ‘setlinebuf’ was here
-    #
-    # My patch fixes this by changing the declared return type of setlinebuf in
-    # gnushogi.h to int to match up with stdio.h's declaration
-    # It was returning void anyway, so unless something errantly relies on it not
-    # leaving something in the return register, this shouldn't break anything
-    DATA
-  end
+  # gcc 4.2.1 flags the following error
+  # In file included from attacks.c:32:
+  # gnushogi.h:144: error: conflicting types for ‘setlinebuf’
+  # /usr/include/stdio.h:351: error: previous declaration of ‘setlinebuf’ was here
+  #
+  # My patch fixes this by changing the declared return type of setlinebuf in
+  # gnushogi.h to int to match up with stdio.h's declaration
+  # It was returning void anyway, so unless something errantly relies on it not
+  # leaving something in the return register, this shouldn't break anything
+  patch :DATA
 
   def install
     system "./configure", "--disable-debug", "--disable-dependency-tracking",

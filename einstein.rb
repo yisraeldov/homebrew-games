@@ -9,10 +9,8 @@ class Einstein < Formula
   depends_on 'sdl_ttf'
   depends_on 'sdl_mixer'
 
-  def patches
-    # Fixes a cast error on compilation
-    { :p0 => DATA }
-  end
+  # Fixes a cast error on compilation
+  patch :p0, DATA
 
   def install
     system 'make'

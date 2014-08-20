@@ -23,11 +23,6 @@ class Inform6 < Formula
     depends_on :libtool
   end
 
-  def patches
-    unless build.head?
-    end
-  end
-
   def install
     system "./autogen.sh" if build.head?
     system "./configure", "--disable-dependency-tracking",

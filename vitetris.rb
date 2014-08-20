@@ -5,11 +5,9 @@ class Vitetris < Formula
   url 'http://www.victornils.net/tetris/vitetris-0.57.tar.gz'
   sha1 'af9d539ae208fb174db4b86e535e7e29b7ffa3cf'
 
-  def patches
-    # remove a 'strip' option not supported on OS X and root options for
-    # 'install'
-    DATA
-  end
+  # remove a 'strip' option not supported on OS X and root options for
+  # 'install'
+  patch :DATA
 
   def install
     system "./configure", "--prefix=#{prefix}", "--without-xlib"

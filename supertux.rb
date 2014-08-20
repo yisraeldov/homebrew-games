@@ -13,7 +13,7 @@ class Supertux < Formula
   depends_on 'libvorbis'
 
   devel do
-    url 'http://supertux.googlecode.com/files/supertux-0.3.4.tar.bz2'
+    url 'https://supertux.googlecode.com/files/supertux-0.3.4.tar.bz2'
     sha1 '9502cdad9ab8d04074ed57a6568fc87c7e857dcb'
 
     depends_on 'cmake' => :build
@@ -28,10 +28,10 @@ class Supertux < Formula
     end
   end
 
-  def patches
+  stable do
     # Patch from macports port
     # https://trac.macports.org/ticket/29635
-    { :p0 => DATA } if not build.devel?
+    patch :p0, :DATA
   end
 
   def install

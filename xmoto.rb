@@ -18,9 +18,7 @@ class Xmoto < Formula
 
   # Fixes compiling against libpng on Lion. See:
   # http://todo.xmoto.tuxfamily.org/index.php?do=details&task_id=783
-  def patches
-    DATA
-  end
+  patch :DATA
 
   def install
     system "./configure", "--prefix=#{prefix}",
@@ -30,7 +28,6 @@ class Xmoto < Formula
     system "make install"
   end
 end
-
 
 __END__
 diff --git a/src/image/tim_png.cpp b/src/image/tim_png.cpp

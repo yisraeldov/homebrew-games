@@ -12,9 +12,7 @@ class Slashem < Formula
 
   # Fixes compilation error in OS X:
   # http://sourceforge.net/tracker/index.php?func=detail&aid=1644971&group_id=9746&atid=109746
-  def patches
-   DATA
-  end
+  patch :DATA
 
   def install
     ENV.j1

@@ -12,9 +12,7 @@ class Xu4 < Formula
   depends_on 'sdl_mixer'
   depends_on :x11
 
-  def patches
-    DATA
-  end
+  patch :DATA
 
   def install
     ultima_zips = [
@@ -29,12 +27,7 @@ class Xu4 < Formula
       # Copy over SDL's ObjC main files
       `cp -R #{Formula["sdl"].libexec}/* macosx`
 
-      if MacOS::Xcode.version >= "4.3"
-        sdk = MacOS::Xcode.prefix/"Platforms/MacOSX.platform/Developer/SDKs/MacOSX#{MacOS.version}.sdk"
-      else
-        sdk = MacOS::Xcode.prefix/"SDKs/MacOSX#{MacOS.version}.sdk"
-      end
-      args = %W[SYSROOT=#{sdk}
+      args = %W[SYSROOT=#{MacOS.sdk_path}
       PREFIX=#{HOMEBREW_PREFIX}
       CC=#{ENV.cc}
       CXX=#{ENV.cxx}]

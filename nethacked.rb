@@ -28,9 +28,7 @@ class Nethacked < Formula
   # Don't remove save folder
   skip_clean 'libexec/save'
 
-  def patches
-    DATA
-  end
+  patch :DATA
 
   def install
     # Build everything in-order; no multi builds.

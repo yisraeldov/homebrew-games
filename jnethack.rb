@@ -16,12 +16,12 @@ class Jnethack < Formula
   # Don't remove save folder
   skip_clean 'libexec/save'
 
-  def patches
-    [
-      'http://iij.dl.sourceforge.jp/jnethack/30862/jnethack-3.4.3-0.10.diff.gz',
-      DATA
-    ]
+  patch do
+    url "http://iij.dl.sourceforge.jp/jnethack/30862/jnethack-3.4.3-0.10.diff.gz"
+    sha1 "68c6f118d7cef4776a9283b37f15c5c3a60873e8"
   end
+
+  patch :DATA
 
   def install
     # Build everything in-order; no multi builds.

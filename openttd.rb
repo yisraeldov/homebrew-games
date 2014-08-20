@@ -26,14 +26,11 @@ class Openttd < Formula
     sha1 'e9c4203923bb9c974ac67886bd00b7090658b961'
   end
 
-  def patches
-    p = {
-      :p0 => [
-        # Ensures a deployment target is not set on 10.9;
-        # TODO report this upstream
-        'https://trac.macports.org/export/117147/trunk/dports/games/openttd/files/patch-config.lib-remove-deployment-target.diff'
-      ]
-    }
+  # Ensures a deployment target is not set on 10.9;
+  # TODO report this upstream
+  patch :p0 do
+    url "https://trac.macports.org/export/117147/trunk/dports/games/openttd/files/patch-config.lib-remove-deployment-target.diff"
+    sha1 "4093cccc269fdd1306b33ae2ec733865491b14c8"
   end
 
   def install

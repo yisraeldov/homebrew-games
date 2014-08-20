@@ -40,7 +40,7 @@ class Brogue < Formula
     EOS
   end
 
-  def test
+  test do
     system "#{bin}/brogue", "--version"
   end
 end

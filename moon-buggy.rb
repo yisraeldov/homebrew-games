@@ -13,7 +13,7 @@ class MoonBuggy < Formula
     system "make install"
   end
 
-  def test
+  test do
     system "moon-buggy"
   end
 end

@@ -31,7 +31,7 @@ class Freeciv < Formula
     system "make", "install"
   end
 
-  def test
+  test do
     system "#{bin}/freeciv-server", "-v"
   end
 end

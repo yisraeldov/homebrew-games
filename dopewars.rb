@@ -2,7 +2,7 @@ require 'formula'
 
 class Dopewars < Formula
   homepage 'http://dopewars.sourceforge.net'
-  url 'http://prdownloads.sourceforge.net/dopewars/dopewars-1.5.12.tar.gz'
+  url 'https://downloads.sourceforge.net/project/dopewars/dopewars/1.5.12/dopewars-1.5.12.tar.gz'
   sha1 'ad46a38e225680e591b078eeec563d47b96684bc'
 
   depends_on 'pkg-config' => :build

@@ -68,7 +68,7 @@ class Abuse < Formula
     EOS
   end
 
-  def test
+  test do
     system("#{libexec}/abuse-bin", '--help')
   end
 end

@@ -14,7 +14,7 @@ class Mupen64plus < Formula
   depends_on :libpng
   depends_on 'sdl'
   depends_on :freetype unless build.include? 'disable-osd'
-  depends_on 'libsamplerate' if build.include? 'with-src'
+  depends_on 'libsamplerate' if build.with? 'src'
   depends_on 'speex' => :optional
 
   def install
@@ -29,8 +29,8 @@ class Mupen64plus < Formula
 
     cd "source/mupen64plus-audio-sdl/projects/unix" do
       args = commonArgs.dup
-      args << "NO_SRC=1" unless build.include? 'with-src'
-      args << "NO_SPEEX=1" unless build.include? 'with-speex'
+      args << "NO_SRC=1" if build.without? 'src'
+      args << "NO_SPEEX=1" if build.without? 'speex'
       system "make", *args
     end
 

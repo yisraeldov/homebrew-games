@@ -49,7 +49,7 @@ class Supertux < Formula
     end
   end
 
-  def test
+  test do
     system "supertux"
   end
 end

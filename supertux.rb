@@ -13,16 +13,18 @@ class Supertux < Formula
   depends_on 'libvorbis'
 
   devel do
-    url 'https://downloads.sf.net/project/supertux.berlios/supertux-0.3.3.tar.bz2'
-    sha1 'f89214fd5d997b62753fbba7e1d089d81513f2de'
+    url 'http://supertux.googlecode.com/files/supertux-0.3.4.tar.bz2'
+    sha1 '9502cdad9ab8d04074ed57a6568fc87c7e857dcb'
 
     depends_on 'cmake' => :build
     depends_on 'glew'
     depends_on 'boost'
 
     fails_with :clang do
-      build 318
-      cause "errors in squtils.h"
+      cause <<-EOS.undent
+        error: implicit instantiation of undefined template 'std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >'
+        std::string message;
+        EOS
     end
   end
 
@@ -35,7 +37,7 @@ class Supertux < Formula
   def install
     if build.devel?
       args = std_cmake_args
-      args << '-DINSTALL_SUBDIR_BIN=bin' << 'DINSTALL_SUBDIR_SHARE=share/supertux2'
+      args << '-DINSTALL_SUBDIR_BIN=bin' << '-DINSTALL_SUBDIR_SHARE=share/supertux2'
       system "cmake", ".", *args
       system "make"
       bin.install ['supertux2']

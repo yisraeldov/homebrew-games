@@ -19,12 +19,12 @@ class Supertux < Formula
     depends_on 'cmake' => :build
     depends_on 'glew'
     depends_on 'boost'
-  end
 
-  fails_with :clang do
-    build 318
-    cause "errors in squtils.h"
-  end if build.devel?
+    fails_with :clang do
+      build 318
+      cause "errors in squtils.h"
+    end
+  end
 
   def patches
     # Patch from macports port

@@ -9,6 +9,9 @@ class Freeciv < Formula
   option 'disable-nls', 'Disable NLS support'
 
   depends_on 'pkg-config' => :build
+  # depends on readline functionality that libedit didn't provide
+  # prior to Snow Leopard
+  depends_on 'readline' if MacOS.version < :snow_leopard
   depends_on 'sdl'
   depends_on 'sdl_image'
   depends_on 'sdl_mixer'

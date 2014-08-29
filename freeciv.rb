@@ -12,9 +12,7 @@ class Freeciv < Formula
   option 'with-gtk+3' , 'Enable the GTK+3 Freeciv client'
 
   depends_on 'pkg-config' => :build
-  # depends on readline functionality that libedit didn't provide
-  # prior to Snow Leopard
-  depends_on 'readline' if MacOS.version < :snow_leopard
+  depends_on "readline"
   depends_on :x11
   depends_on 'gettext' unless build.include? 'disable-nls'
 

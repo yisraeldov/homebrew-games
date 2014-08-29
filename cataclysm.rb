@@ -11,6 +11,8 @@ class Cataclysm < Formula
   needs :cxx11
 
   depends_on "gettext"
+  # needs `set_escdelay`, which isn't present in system ncurses before 10.6
+  depends_on "homebrew/dupes/ncurses" if MacOS.version < :snow_leopard
 
   def install
     args = %W[

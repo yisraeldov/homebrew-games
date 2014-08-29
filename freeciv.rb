@@ -1,20 +1,20 @@
-require 'formula'
+require "formula"
 
 class Freeciv < Formula
-  homepage 'http://freeciv.wikia.com'
-  url 'https://downloads.sourceforge.net/project/freeciv/Freeciv%202.4/2.4.3/freeciv-2.4.3.tar.bz2'
-  sha1 'ed7473e28c53e4bfbfc2535c15c7ef17d4e34204'
-  head 'svn://svn.gna.org/svn/freeciv/trunk'
+  homepage "http://freeciv.wikia.com"
+  url "https://downloads.sourceforge.net/project/freeciv/Freeciv%202.4/2.4.3/freeciv-2.4.3.tar.bz2"
+  sha1 "ed7473e28c53e4bfbfc2535c15c7ef17d4e34204"
+  head "svn://svn.gna.org/svn/freeciv/trunk"
 
-  option 'disable-nls' , 'Disable NLS support'
-  option 'without-sdl' , 'Disable the SDL Freeciv client'
-  option 'with-gtk+' , 'Disable the GTK+ Freeciv client'
-  option 'with-gtk+3' , 'Enable the GTK+3 Freeciv client'
+  option "disable-nls" , "Disable NLS support"
+  option "without-sdl" , "Disable the SDL Freeciv client"
+  option "with-gtk+" , "Disable the GTK+ Freeciv client"
+  option "with-gtk+3" , "Enable the GTK+3 Freeciv client"
 
-  depends_on 'pkg-config' => :build
+  depends_on "pkg-config" => :build
   depends_on "readline"
   depends_on :x11
-  depends_on 'gettext' unless build.include? 'disable-nls'
+  depends_on "gettext" unless build.include? "disable-nls"
 
   depends_on "sdl" => :recommended
   depends_on "sdl_image" if build.with? "sdl"
@@ -28,7 +28,7 @@ class Freeciv < Formula
     args = ["--disable-debug", "--disable-dependency-tracking",
             "--prefix=#{prefix}"]
 
-    if build.include? 'disable-nls'
+    if build.include? "disable-nls"
       args << "--disable-nls"
     else
       gettext = Formula["gettext"]

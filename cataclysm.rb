@@ -15,6 +15,10 @@ class Cataclysm < Formula
   depends_on "homebrew/dupes/ncurses" if MacOS.version < :snow_leopard
 
   def install
+    # cataclysm tries to #import <curses.h>, but Homebrew ncurses installs no
+    # top-level headers
+    ENV.append_to_cflags "-I#{Formula['ncurses'].include}/ncursesw" if MacOS.version < :snow_leopard
+
     args = %W[
       NATIVE=osx RELEASE=1
       CXX=#{ENV.cxx} LD=#{ENV.cxx} CXXFLAGS=#{ENV.cxxflags}

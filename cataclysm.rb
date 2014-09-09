@@ -21,7 +21,7 @@ class Cataclysm < Formula
 
     args = %W[
       NATIVE=osx RELEASE=1
-      CXX=#{ENV.cxx} LD=#{ENV.cxx} CXXFLAGS=#{ENV.cxxflags + " " + ENV.cppflags}
+      CXX=#{ENV.cxx} LD=#{ENV.cxx} CXXFLAGS=#{[ENV.cxxflags, ENV.cppflags].join(" ")}
     ]
 
     args << "CLANG=1" if ENV.compiler == :clang

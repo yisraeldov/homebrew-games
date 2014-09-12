@@ -9,6 +9,8 @@ class Ninvaders < Formula
     ENV.j1 # this formula's build system can't parallelize
     inreplace 'Makefile' do |s|
       s.change_make_var! "CC", ENV.cc
+      # gcc-4.2 doesn't like the lack of space here
+      s.gsub! "-o$@", "-o $@"
     end
     system "make" # build the binary
     bin.install 'nInvaders'

@@ -23,7 +23,9 @@ class StoneSoup < Formula
 
       system "make", "install", "prefix=#{prefix}", "DATADIR=data/",
         "DEVELOPER_DIR=#{devdir}", "SDKROOT=#{MacOS.sdk_path}",
-        "SDK_VER=#{MacOS.version}"
+        # stone-soup tries to use `uname -m` to determine build -arch,
+        # which is frequently wrong on OS X
+        "SDK_VER=#{MacOS.version}", "MARCH=#{MacOS.preferred_arch}"
     end
   end
 end

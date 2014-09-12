@@ -1,4 +1,5 @@
 require 'formula'
+require 'etc'
 
 # Nethack the way God intended it to be played: from a terminal.
 
@@ -8,17 +9,20 @@ require 'formula'
 class Jnethack < Formula
   url 'https://downloads.sourceforge.net/project/nethack/nethack/3.4.3/nethack-343-src.tgz'
   homepage 'http://jnethack.sourceforge.jp/'
-  version '3.4.3-0.10'
+  version '3.4.3-0.11'
   sha1 'c26537093c38152bc0fbcec20468d975b35f59fd'
 
   fails_with_llvm :build => 2334
+
+  # needs X11 locale for i18n
+  depends_on :x11
 
   # Don't remove save folder
   skip_clean 'libexec/save'
 
   patch do
-    url "http://iij.dl.sourceforge.jp/jnethack/30862/jnethack-3.4.3-0.10.diff.gz"
-    sha1 "68c6f118d7cef4776a9283b37f15c5c3a60873e8"
+    url "http://iij.dl.sourceforge.jp/jnethack/58545/jnethack-3.4.3-0.11.diff.gz"
+    sha1 "ee138602035c0f5587a24b2567135c836ad65395"
   end
 
   patch :DATA
@@ -27,18 +31,7 @@ class Jnethack < Formula
     # Build everything in-order; no multi builds.
     ENV.deparallelize
 
-    # Replace tokens introduced by the patches
-    %w(
-      sys/unix/Makefile.doc
-      sys/unix/Makefile.src
-      sys/unix/Makefile.top
-      sys/unix/Makefile.utl
-      sys/unix/nethack.sh
-    ).each do |f|
-      inreplace f, "__PREFIX__", prefix
-      inreplace f, "__CFLAGS__", "-Wno-format -Wno-int-to-pointer-cast -Wno-pointer-to-int-cast"
-      inreplace f, "__LDFLAGS__", ""
-    end
+    ENV['HOMEBREW_CFLAGS'] = ENV.cflags
 
     # Symlink makefiles
     system 'sh sys/unix/setup.sh'
@@ -48,7 +41,7 @@ class Jnethack < Formula
       "#define HACKDIR \"#{libexec}\""
 
     # Enable wizard mode for the current user
-    wizard = ENV['USER']
+    wizard = Etc.getpwuid.name
 
     inreplace "include/config.h",
       /^#\s*define\s+WIZARD\s+"wizard"/,
@@ -58,10 +51,9 @@ class Jnethack < Formula
       /^#\s*define\s+WIZARD_NAME\s+"wizard"/,
       "#define WIZARD_NAME \"#{wizard}\""
 
-    # Make the data first, before we munge the CFLAGS
-    system "cd dat;make"
-
     cd 'dat' do
+      system "make"
+
       %w(perm logfile).each do |f|
         system "touch", f
         libexec.install f
@@ -74,7 +66,9 @@ class Jnethack < Formula
 
     # Make the game
     ENV.append_to_cflags "-I../include"
-    system 'cd src;make'
+    cd "src" do
+      system "make"
+    end
 
     bin.install 'src/jnethack'
     (libexec+'save').mkpath
@@ -102,7 +96,7 @@ __END__
 -GAME	= nethack
 -MANDIR	= /usr/local/man/man6
 +GAME	= jnethack
-+MANDIR	= $(DESTDIR)__PREFIX__/share/man/man6
++MANDIR	= $(DESTDIR)HOMEBREW_PREFIX/share/man/man6
  MANEXT	= 6
  
  # manual installation for most BSD-style systems
@@ -113,7 +107,7 @@ __END__
  
  # Normally, the C compiler driver is used for linking:
 -LINK=$(CC)
-+LINK=$(CC) __CFLAGS__
++LINK=$(CC) $(CFLAGS)
  
  # Pick the SYSSRC and SYSOBJ lines corresponding to your desired operating
  # system.
@@ -132,8 +126,8 @@ __END__
  
 -CFLAGS = -W -g -O -I../include
 -LFLAGS = 
-+CFLAGS = __CFLAGS__ -I../include
-+LFLAGS = __LDFLAGS__
++CFLAGS = $(HOMEBREW_CFLAGS) -I../include
++LFLAGS = $(LDFLAGS)
  
  # The Qt and Be window systems are written in C++, while the rest of
  # NetHack is standard C.  If using Qt, uncomment the LINK line here to get
@@ -144,7 +138,7 @@ __END__
  
  # make NetHack
 -PREFIX	 = /usr
-+PREFIX	 = $(DESTDIR)__PREFIX__
++PREFIX	 = $(DESTDIR)HOMEBREW_PREFIX
  GAME     = jnethack
  # GAME     = nethack.prg
  GAMEUID  = games
@@ -192,8 +186,8 @@ __END__
  
 -CFLAGS = -O -I../include
 -LFLAGS =
-+CFLAGS = __CFLAGS__ -I../include
-+LFLAGS = __LDFLAGS__
++CFLAGS = $(HOMEBREW_CFLAGS) -I../include
++LFLAGS = $(LDFLAGS)
  
  LIBS =
   
@@ -212,7 +206,7 @@ __END__
  export HACKDIR
  HACK=$HACKDIR/nethack
  MAXNROFPLAYERS=20
-+COCOT="__PREFIX__/bin/cocot -t UTF-8 -p EUC-JP"
++COCOT="HOMEBREW_PREFIX/bin/cocot -t UTF-8 -p EUC-JP"
  
  # JP
  # set LC_ALL, NETHACKOPTIONS etc..

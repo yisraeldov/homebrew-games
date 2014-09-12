@@ -1,4 +1,5 @@
 require 'formula'
+require 'etc'
 
 class Slashem < Formula
   homepage 'http://slashem.sourceforge.net'
@@ -20,7 +21,8 @@ class Slashem < Formula
                           "--prefix=#{prefix}",
                           "--with-mandir=#{man}",
                           "--with-group=admin",
-                          "--with-owner=#{`echo $USER`}"
+                          "--with-owner=#{Etc.getpwuid.name}",
+                          "--enable-wizmode=#{Etc.getpwuid.name}"
     system "make install"
 
     man6.install 'doc/slashem.6'

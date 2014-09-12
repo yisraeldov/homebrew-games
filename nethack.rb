@@ -1,4 +1,5 @@
 require 'formula'
+require 'etc'
 
 # Nethack the way God intended it to be played: from a terminal.
 # This build script was created referencing:
@@ -36,7 +37,7 @@ class Nethack < Formula
       "#define HACKDIR \"#{libexec}\""
 
     # Enable wizard mode for the current user
-    wizard = ENV['USER']
+    wizard = Etc.getpwuid.name
 
     inreplace "include/config.h",
       /^#\s*define\s+WIZARD\s+"wizard"/,

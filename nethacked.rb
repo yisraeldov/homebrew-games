@@ -1,4 +1,5 @@
 require 'formula'
+require 'etc'
 
 # Bugfixed and interface-patched Nethack.
 #
@@ -42,7 +43,7 @@ class Nethacked < Formula
       "#define HACKDIR \"#{libexec}\""
 
     # Enable wizard mode for the current user
-    wizard = ENV['USER']
+    wizard = Etc.getpwuid.name
 
     inreplace "include/config.h",
       /^#\s*define\s+WIZARD\s+"wizard"/,

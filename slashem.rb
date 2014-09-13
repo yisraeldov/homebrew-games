@@ -15,6 +15,13 @@ class Slashem < Formula
   # http://sourceforge.net/tracker/index.php?func=detail&aid=1644971&group_id=9746&atid=109746
   patch :DATA
 
+  # Fixes user check on older versions of OS X: http://sourceforge.net/p/slashem/bugs/895/
+  # Fixed upstream: http://slashem.cvs.sourceforge.net/viewvc/slashem/slashem/configure?r1=1.13&r2=1.14&view=patch
+  patch :p0 do
+    url "https://gist.githubusercontent.com/mistydemeo/76dd291c77a509216418/raw/65a41804b7d7e1ae6ab6030bde88f7d969c955c3/slashem-configure.patch"
+    sha1 "b05bab5b2f93ca598d9c9c0ad935374a150c4e9d"
+  end
+
   def install
     ENV.j1
     system "./configure", "--disable-debug", "--disable-dependency-tracking",

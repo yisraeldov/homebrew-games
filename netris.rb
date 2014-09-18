@@ -11,16 +11,16 @@ class Netris < Formula
   # Also fixes case of "TERM=xterm-color256" which otherwise segfaults.
   def patches
     [
-      'http://patch-tracker.debian.org/patch/series/dl/netris/0.52-9/01_multi-games-with-scoring',
-      'http://patch-tracker.debian.org/patch/series/dl/netris/0.52-9/02_line-count-patch',
-      'http://patch-tracker.debian.org/patch/series/dl/netris/0.52-9/03_staircase-effect-fix',
-      'http://patch-tracker.debian.org/patch/series/dl/netris/0.52-9/04_robot-close-fixup',
-      'http://patch-tracker.debian.org/patch/series/dl/netris/0.52-9/05_init-static-vars',
-      'http://patch-tracker.debian.org/patch/series/dl/netris/0.52-9/06_curses.c-include-term.h',
-      'http://patch-tracker.debian.org/patch/series/dl/netris/0.52-9/07_curses.c-include-time.h',
-      'http://patch-tracker.debian.org/patch/series/dl/netris/0.52-9/08_various-fixes',
-      'http://patch-tracker.debian.org/patch/series/dl/netris/0.52-9/09_ipv6',
-      'http://patch-tracker.debian.org/patch/series/dl/netris/0.52-9/10_fix-memory-leak',
+      'http://git.deb.at/w/pkg/netris.git/blob_plain/90991bd0137a2510f93ec126a8642f48eb3738be:/debian/patches/01_multi-games-with-scoring',
+      'http://git.deb.at/w/pkg/netris.git/blob_plain/90991bd0137a2510f93ec126a8642f48eb3738be:/debian/patches/02_line-count-patch',
+      'http://git.deb.at/w/pkg/netris.git/blob_plain/90991bd0137a2510f93ec126a8642f48eb3738be:/debian/patches/03_staircase-effect-fix',
+      'http://git.deb.at/w/pkg/netris.git/blob_plain/90991bd0137a2510f93ec126a8642f48eb3738be:/debian/patches/04_robot-close-fixup',
+      'http://git.deb.at/w/pkg/netris.git/blob_plain/90991bd0137a2510f93ec126a8642f48eb3738be:/debian/patches/05_init-static-vars',
+      'http://git.deb.at/w/pkg/netris.git/blob_plain/90991bd0137a2510f93ec126a8642f48eb3738be:/debian/patches/06_curses.c-include-term.h',
+      'http://git.deb.at/w/pkg/netris.git/blob_plain/90991bd0137a2510f93ec126a8642f48eb3738be:/debian/patches/07_curses.c-include-time.h',
+      'http://git.deb.at/w/pkg/netris.git/blob_plain/90991bd0137a2510f93ec126a8642f48eb3738be:/debian/patches/08_various-fixes',
+      'http://git.deb.at/w/pkg/netris.git/blob_plain/90991bd0137a2510f93ec126a8642f48eb3738be:/debian/patches/09_ipv6',
+      'http://git.deb.at/w/pkg/netris.git/blob_plain/90991bd0137a2510f93ec126a8642f48eb3738be:/debian/patches/10_fix-memory-leak',
     ]
   end
 

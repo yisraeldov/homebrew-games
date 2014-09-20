@@ -1,13 +1,13 @@
-require 'formula'
+require "formula"
 
 class C10t < Formula
-  homepage 'https://github.com/udoprog/c10t'
-  url 'https://github.com/udoprog/c10t/archive/1.7.tar.gz'
-  sha1 '1419b0abd42b05c82cde39d02b4ffce1e77265d1'
+  homepage "https://github.com/udoprog/c10t"
+  url "https://github.com/udoprog/c10t/archive/1.7.tar.gz"
+  sha1 "1419b0abd42b05c82cde39d02b4ffce1e77265d1"
 
-  depends_on 'cmake' => :build
-  depends_on 'boost'
-  depends_on 'freetype'
+  depends_on "cmake" => :build
+  depends_on "boost"
+  depends_on "freetype"
 
   # Needed to compile against newer boost
   # Can be removed for next version of c10t after 1.7
@@ -31,7 +31,7 @@ class C10t < Formula
   end
 
   def install
-    inreplace 'test/CMakeLists.txt', 'boost_unit_test_framework', 'boost_unit_test_framework-mt'
+    inreplace "test/CMakeLists.txt", "boost_unit_test_framework", "boost_unit_test_framework-mt"
     system "cmake", ".", *std_cmake_args
     system "make"
     bin.install "c10t"

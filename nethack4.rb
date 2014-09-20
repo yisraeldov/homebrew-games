@@ -8,6 +8,12 @@ class Nethack4 < Formula
 
   head "https://gitorious.org/nitrohack/ais523.git", :branch => "nicehack"
 
+  # Assumes C11 _Noreturn is available for clang:
+  # http://trac.nethack4.org/ticket/568
+  fails_with :clang do
+    build 425
+  end
+
   stable do
     # These two patches remove the use of realtime POSIX signals on OS X,
     # which doesn't provide that feature

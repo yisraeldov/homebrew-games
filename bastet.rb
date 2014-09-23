@@ -15,7 +15,7 @@ class Bastet < Formula
     inreplace "Makefile" do |s|
       s.change_make_var! "BIN_PREFIX", "#{bin}/"
       s.change_make_var! "DATA_PREFIX", "#{var}/"
-      s.change_make_var! "GAME_USER", "#{Etc.getpwuid.name}"
+      s.change_make_var! "GAME_USER", Etc.getpwuid.name
     end
     system "make", "all"
 

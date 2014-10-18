@@ -2,8 +2,8 @@ require 'formula'
 
 class Openttd < Formula
   homepage 'http://www.openttd.org/'
-  url 'http://binaries.openttd.org/releases/1.4.2/openttd-1.4.2-source.tar.gz'
-  sha1 '23da37d74ce7187a0d5d70c2324f18f72e6f0cc6'
+  url 'http://binaries.openttd.org/releases/1.4.3/openttd-1.4.3-source.tar.gz'
+  sha1 '6de5e2f4c4cc1087c45e446eaf2056ba70b3156b'
 
   head 'git://git.openttd.org/openttd/trunk.git'
 

@@ -2,8 +2,8 @@ require 'formula'
 
 class Mednafen < Formula
   homepage 'http://mednafen.sourceforge.net/'
-  url 'https://downloads.sourceforge.net/project/mednafen/Mednafen/0.9.36.3/mednafen-0.9.36.3.tar.bz2'
-  sha1 '32a9b1ac01ddc1b5d7c24fcd84d4f53ec1921f5e'
+  url 'https://downloads.sourceforge.net/project/mednafen/Mednafen/0.9.36.4/mednafen-0.9.36.4.tar.bz2'
+  sha1 '4c8bd353159785918f03a1d0f5c48c229a903402'
 
   depends_on 'pkg-config' => :build
   depends_on 'sdl'

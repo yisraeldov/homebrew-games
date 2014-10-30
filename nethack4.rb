@@ -6,7 +6,12 @@ class Nethack4 < Formula
   sha1 "1f1b11cf5748b58926b354fae763e80df4f63372"
   version "4.3.0-beta1"
 
-  head "https://gitorious.org/nitrohack/ais523.git", :branch => "nicehack"
+  head do
+    url "https://gitorious.org/nitrohack/ais523.git", :branch => "nicehack"
+
+    # yes, even though we build without tiles - see http://trac.nethack4.org/ticket/646
+    depends_on "libpng"
+  end
 
   bottle do
     root_url "https://downloads.sf.net/project/machomebrew/Bottles/games"

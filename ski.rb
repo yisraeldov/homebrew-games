@@ -1,9 +1,9 @@
 require 'formula'
 
 class Ski < Formula
-  url 'http://catb.org/~esr/ski/ski-6.5.tar.gz'
+  url 'http://www.catb.org/~esr/ski/ski-6.8.tar.gz'
   homepage 'http://catb.org/~esr/ski/'
-  sha1 'd6cc1a86b841884c5b19dffbed1f472970c7468c'
+  sha1 '500c3ebff28dfe2b7a4c9c4c4690c0dea7a3e32a'
 
   def install
     bin.install "ski"

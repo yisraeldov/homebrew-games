@@ -22,25 +22,13 @@ class Wesnoth < Formula
   end
 
   devel do
-    url 'https://downloads.sourceforge.net/project/wesnoth/wesnoth/wesnoth-1.11.18/wesnoth-1.11.18.tar.bz2'
-    sha1 'd2d1e95cbc660adbc54b8b11b5d36ba73977b54c'
+    url 'https://downloads.sourceforge.net/project/wesnoth/wesnoth/wesnoth-1.11.19/wesnoth-1.11.19.tar.bz2'
+    sha1 '1f98b1043525d4721e39f51add9af0abf08d2904'
 
     patch do
-      # This adds pkg_config_libdir to scons/pkgconfig py file
-      url 'https://github.com/wesnoth/wesnoth/commit/9f93831a2397d45560a9f1e36a40aac38d4affc3.diff'
-      sha1 '8fb0de0af39075b249493e948dabe5868ecb681c'
-    end
-
-    patch do
-      # This adds OS_ENV option to SConstruct
-      url 'https://github.com/wesnoth/wesnoth/commit/2652c723d215aa4495e2b3385fbb5774aae8d9d0.diff'
-      sha1 '0660e6f68e75d1f27a17e15ccebf55846c7b44dc'
-    end
-
-    patch do
-      # This fixed up the issue with TERM being empty
-      url 'https://github.com/wesnoth/wesnoth/commit/20dbcff99cd64074c939f2a1f7aec51fb92ab489.diff'
-      sha1 '9f2c3a581eb2f32dc9efa56c4196f94a1a398774'
+      # This patch fixes bug #22921
+      url 'https://github.com/wesnoth/wesnoth/commit/b6f916adf1a5489985433c0016e0661a02452f1a.diff'
+      sha1 '0fedaba6997a07339bb6ea3986c003697ef3c844'
     end
   end
 

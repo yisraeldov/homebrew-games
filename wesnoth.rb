@@ -47,7 +47,7 @@ class Wesnoth < Formula
 
   if OS.linux?
     # On linux, x11 driver is needed or the clipboard code doesn't work, images don't load
-    depends_on 'sdl' => 'with-x11-driver'
+    depends_on 'sdl' => 'with-x11'
   else
     depends_on 'sdl'
   end

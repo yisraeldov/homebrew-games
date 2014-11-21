@@ -1,9 +1,9 @@
 require 'formula'
 
 class ChocolateDoom < Formula
-  url 'https://downloads.sourceforge.net/project/chocolate-doom/chocolate-doom/1.6.0/chocolate-doom-1.6.0.tar.gz'
+  url 'http://www.chocolate-doom.org/downloads/2.1.0/chocolate-doom-2.1.0.tar.gz'
   homepage 'http://www.chocolate-doom.org/'
-  sha1 '081ebac89996072b5bbfc3a572b16044ab2fc790'
+  sha1 'edf80092b4d08af6de5ef0cf10a17b9105f91f42'
 
   depends_on 'sdl'
   depends_on 'sdl_net'

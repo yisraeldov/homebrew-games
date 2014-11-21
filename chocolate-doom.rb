@@ -1,13 +1,13 @@
 require 'formula'
 
 class ChocolateDoom < Formula
-  url 'http://www.chocolate-doom.org/downloads/2.1.0/chocolate-doom-2.1.0.tar.gz'
-  homepage 'http://www.chocolate-doom.org/'
-  sha1 'edf80092b4d08af6de5ef0cf10a17b9105f91f42'
+  homepage "http://www.chocolate-doom.org/"
+  url "http://www.chocolate-doom.org/downloads/2.1.0/chocolate-doom-2.1.0.tar.gz"
+  sha1 "edf80092b4d08af6de5ef0cf10a17b9105f91f42"
 
-  depends_on 'sdl'
-  depends_on 'sdl_net'
-  depends_on 'sdl_mixer'
+  depends_on "sdl"
+  depends_on "sdl_net"
+  depends_on "sdl_mixer"
 
   def install
     system "./configure", "--prefix=#{prefix}",

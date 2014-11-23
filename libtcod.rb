@@ -1,7 +1,7 @@
 require 'formula'
 
 class Libtcod < Formula
-  homepage 'http://doryen.eptalys.net/libtcod/'
+  homepage 'http://roguecentral.org/doryen/libtcod/'
   url 'https://bitbucket.org/jice/libtcod/get/1.5.1.tar.bz2'
   sha1 '4bf117f2d29b0ad851552c84e8745dcf3ae0af2a'
 

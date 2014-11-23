@@ -5,6 +5,12 @@ class StoneSoup < Formula
   url 'https://downloads.sourceforge.net/project/crawl-ref/Stone%20Soup/0.15.2/stone_soup-0.15.2.tar.xz'
   sha1 'fb9bec3f4adbb3e8cc60e6ddc77cd63f23654b81'
 
+  bottle do
+    sha1 "ffda406e7326f61980800f2c09686cc6f817606d" => :yosemite
+    sha1 "7632c4211d0a6e0e606b6ce91e12f0128c3903b5" => :mavericks
+    sha1 "9c9f1b441fb8972b65dc8d2d48db52ade96b9f3e" => :mountain_lion
+  end
+
   depends_on 'xz' => :build
 
   def install

@@ -8,6 +8,13 @@ class Nethack4 < Formula
 
   head "https://gitorious.org/nitrohack/ais523.git", :branch => "nicehack"
 
+  bottle do
+    root_url "https://downloads.sf.net/project/machomebrew/Bottles/games"
+    sha1 "bfe3bd2461289bb7064dd915128733e1692fce3c" => :yosemite
+    sha1 "225b12566eda278271735f5f737e210d0afba302" => :mavericks
+    sha1 "c8eb2ecd075280628e7c4e4f81afbf7afd83c477" => :mountain_lion
+  end
+
   # Assumes C11 _Noreturn is available for clang:
   # http://trac.nethack4.org/ticket/568
   fails_with :clang do

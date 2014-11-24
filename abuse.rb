@@ -6,6 +6,14 @@ class Abuse < Formula
   head 'svn://svn.zoy.org/abuse/abuse/trunk'
   sha1 '12fea968a1494338ad71c6ec24954f3eef56826a'
 
+  bottle do
+    root_url "https://downloads.sf.net/project/machomebrew/Bottles/games"
+    cellar :any
+    sha1 "4b1251c34a1be43af54c818f5a256ae71447fb88" => :yosemite
+    sha1 "240f522bbebf0d60612f0244a5808c821b6e28d0" => :mavericks
+    sha1 "d35d4a43e373ca8af58dfb361637498e179188ca" => :mountain_lion
+  end
+
   depends_on 'autoconf' => :build
   depends_on 'automake' => :build
   depends_on 'libtool' => :build

@@ -11,9 +11,9 @@ class Mame < Formula
   bottle do
     root_url "https://downloads.sf.net/project/machomebrew/Bottles/games"
     cellar :any
-    sha1 "c9198093fd5ca8d90313f471277c8297c68321be" => :yosemite
-    sha1 "e712fc84e2b971121d24f895057bec56457b687f" => :mavericks
-    sha1 "f612228ac79d3987de4e0062751e98111c3e095c" => :mountain_lion
+    sha1 "a112d2ebeb55c84aecef3586a533dffd00a17a9a" => :yosemite
+    sha1 "7ec476401fd96219db0f0f18783a8f96a56b1893" => :mavericks
+    sha1 "8f8cb3da984b7e7955f75a17e54de9ba9ab2d264" => :mountain_lion
   end
 
   depends_on "sdl2"

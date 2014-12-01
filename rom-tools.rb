@@ -8,6 +8,14 @@ class RomTools < Formula
 
   head "https://github.com/mamedev/mame.git"
 
+  bottle do
+    root_url "https://downloads.sf.net/project/machomebrew/Bottles/games"
+    cellar :any
+    sha1 "731e38a5246a2c87fe73748852c7f66012d17bb5" => :yosemite
+    sha1 "4e1c9496362e207c32f2fdd4b04201a0c2480b6c" => :mavericks
+    sha1 "12c9e0f1ae6ce2ecb1099664f7b98ba6a5bfc18a" => :mountain_lion
+  end
+
   depends_on "sdl2"
 
   # Fix build with non-framework SDL 2 issue on OS X.

@@ -8,6 +8,14 @@ class Cataclysm < Formula
 
   head "https://github.com/CleverRaven/Cataclysm-DDA.git"
 
+  bottle do
+    root_url "https://downloads.sf.net/project/machomebrew/Bottles/games"
+    cellar :any
+    sha1 "b1b39dc6f76b718ddf4cc25355202bfd233d882c" => :yosemite
+    sha1 "6184eb62cc81e0e40145c1334494571bcfe4d8b3" => :mavericks
+    sha1 "411e24d73210b15c47859727aad6c090413a0a8f" => :mountain_lion
+  end
+
   needs :cxx11
 
   depends_on "gettext"

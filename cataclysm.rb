@@ -2,9 +2,9 @@ require 'formula'
 
 class Cataclysm < Formula
   homepage 'http://www.cataclysmdda.com/'
-  url 'https://github.com/CleverRaven/Cataclysm-DDA/archive/0.A.tar.gz'
-  sha1 '019493366fe7f7a27f4ef77f11d6f3c3133ed7ea'
-  version '0.A'
+  url 'https://github.com/CleverRaven/Cataclysm-DDA/archive/0.B.tar.gz'
+  sha1 '28849b6293037deefe320313eb88d076ef4d339d'
+  version '0.B'
 
   head "https://github.com/CleverRaven/Cataclysm-DDA.git"
 
@@ -13,6 +13,14 @@ class Cataclysm < Formula
   depends_on "gettext"
   # needs `set_escdelay`, which isn't present in system ncurses before 10.6
   depends_on "homebrew/dupes/ncurses" if MacOS.version < :snow_leopard
+
+  option "with-tiles", "Enable tileset support"
+
+  if build.with? "tiles"
+    depends_on "sdl2"
+    depends_on "sdl2_image"
+    depends_on "sdl2_ttf"
+  end
 
   def install
     ENV.cxx11
@@ -26,12 +34,18 @@ class Cataclysm < Formula
       CXX=#{ENV.cxx} LD=#{ENV.cxx} CXXFLAGS=#{[ENV.cxxflags, ENV.cppflags].join(" ")}
     ]
 
+    args << "TILES=1" if build.with? "tiles"
     args << "CLANG=1" if ENV.compiler == :clang
 
     system "make", *args
 
     # no make install, so we have to do it ourselves
-    libexec.install "cataclysm", "data"
+    if build.with? "tiles"
+      libexec.install "cataclysm-tiles", "data", "gfx"
+    else
+      libexec.install "cataclysm", "data"
+    end
+
     inreplace "cataclysm-launcher" do |s|
       s.change_make_var! 'DIR', libexec
     end

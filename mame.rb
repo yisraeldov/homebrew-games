@@ -19,7 +19,7 @@ class Mame < Formula
   def install
     ENV["MACOSX_USE_LIBSDL"] = "1"
     ENV["PTR64"] = (MacOS.prefer_64_bit? ? "1" : "0")
-    ENV["LTO"] = "1" if ENV.compiler == :clang or ENV.compiler =~ /^gcc-(4\.[6-9])$/
+    ENV["LTO"] = "1" if (ENV.compiler == :clang && MacOS.version > :lion) || ENV.compiler =~ /^gcc-(4\.[6-9])$/
 
     system "make", "CC=#{ENV.cc}", "LD=#{ENV.cxx}",
                    "TARGET=mame", "SUBTARGET=mame"

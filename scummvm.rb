@@ -7,7 +7,7 @@ class Scummvm < Formula
   head 'https://github.com/scummvm/scummvm.git'
 
   depends_on 'sdl'
-  depends_on :libpng
+  depends_on "libpng"
   depends_on 'flac' => :recommended
   depends_on 'libvorbis' => :recommended
   depends_on 'libogg' => :recommended

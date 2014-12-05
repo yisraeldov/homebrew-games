@@ -14,7 +14,7 @@ class Xmoto < Formula
   depends_on 'sdl_ttf'
   depends_on 'lua'
   depends_on 'ode'
-  depends_on :libpng
+  depends_on "libpng"
 
   # Fixes compiling against libpng on Lion. See:
   # http://todo.xmoto.tuxfamily.org/index.php?do=details&task_id=783

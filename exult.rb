@@ -10,8 +10,8 @@ class Exult < Formula
   depends_on 'sdl'
   depends_on 'sdl_mixer'
   depends_on 'libvorbis'
-  depends_on :automake
-  depends_on :libtool
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
 
   def install
     inreplace "autogen.sh", "libtoolize", "glibtoolize"

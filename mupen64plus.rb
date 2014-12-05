@@ -11,9 +11,9 @@ class Mupen64plus < Formula
   option 'with-speex', 'Build with libspeexdsp'
 
   depends_on 'pkg-config' => :build
-  depends_on :libpng
+  depends_on "libpng"
   depends_on 'sdl'
-  depends_on :freetype unless build.include? 'disable-osd'
+  depends_on "freetype" unless build.include? 'disable-osd'
   depends_on 'libsamplerate' if build.with? 'src'
   depends_on 'speex' => :optional
 

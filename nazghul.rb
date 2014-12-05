@@ -8,7 +8,7 @@ class Nazghul < Formula
   depends_on 'sdl'
   depends_on 'sdl_image'
   depends_on 'sdl_mixer'
-  depends_on :libpng
+  depends_on "libpng"
 
   def install
     system "./configure", "--disable-debug", "--disable-dependency-tracking",

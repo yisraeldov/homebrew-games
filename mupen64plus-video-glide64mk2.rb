@@ -6,7 +6,7 @@ class Mupen64plusVideoGlide64mk2 < Formula
   sha1 '4ee837d711fb5698d9cdbb7eb0204e8fb86d110e'
 
   depends_on 'pkg-config' => :build
-  depends_on :libpng
+  depends_on "libpng"
   depends_on 'sdl'
   depends_on 'boost'
   depends_on 'mupen64plus'

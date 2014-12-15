@@ -8,6 +8,14 @@ class Ume < Formula
 
   head "https://github.com/mamedev/mame.git"
 
+  bottle do
+    root_url "https://downloads.sf.net/project/machomebrew/Bottles/games"
+    cellar :any
+    sha1 "bc3f565fcc3cd4075f286756af4542df4753d1f2" => :yosemite
+    sha1 "1a7c7e5cb089562c24df6ca59af7cacc650fb8e5" => :mavericks
+    sha1 "b3a2f25c4b0983315440a95914f3fa6213530725" => :mountain_lion
+  end
+
   depends_on "sdl2"
 
   # Fix for Cocoa framework linking and sdl-config path

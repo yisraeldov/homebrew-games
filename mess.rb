@@ -8,6 +8,14 @@ class Mess < Formula
 
   head "https://github.com/mamedev/mame.git"
 
+  bottle do
+    root_url "https://downloads.sf.net/project/machomebrew/Bottles/games"
+    cellar :any
+    sha1 "0f73d765cdb7ada1c032b8dea51bfb584abf1383" => :yosemite
+    sha1 "1d70b67b8a47b58b38e5be508a6f925e57e78256" => :mavericks
+    sha1 "3926b6f11f591d766e33f8221dd83f7983ae6e20" => :mountain_lion
+  end
+
   depends_on "sdl2"
 
   # Fix for Cocoa framework linking and sdl-config path

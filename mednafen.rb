@@ -7,9 +7,9 @@ class Mednafen < Formula
 
   bottle do
     root_url "https://downloads.sf.net/project/machomebrew/Bottles/games"
-    sha1 "45286a92cbc85e38829fdcb5703eaeb1a1dc0b59" => :yosemite
-    sha1 "bdbd0bbd01103c0fac28cf3d4ff56c75d58827a7" => :mavericks
-    sha1 "5a5bb6b80586188c459def85dd6b436b05cacf60" => :mountain_lion
+    sha1 "84e3203ab953fbed5a22499a2ad64aa6f17f4d80" => :yosemite
+    sha1 "b251d8fb372df3d5665156a6bd49fd17a5eed618" => :mavericks
+    sha1 "09ade315444535e750cb204d0280c9c7d833f12a" => :mountain_lion
   end
 
   depends_on 'pkg-config' => :build

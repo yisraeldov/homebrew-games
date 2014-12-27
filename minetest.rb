@@ -38,9 +38,9 @@ class Minetest < Formula
   bottle do
     root_url "https://downloads.sf.net/project/machomebrew/Bottles/games"
     cellar :any
-    sha1 "758d0b5b49d7b7702432b3e54c4dc2072ef2890b" => :yosemite
-    sha1 "e85aa444266fc409fbed9b519500608b97530295" => :mavericks
-    sha1 "d3cfbce8047d765b9a2231a67e48df1e7bbafeca" => :mountain_lion
+    sha1 "761719bd9e84497fcb0a15f95efa06f2f65dde2d" => :yosemite
+    sha1 "f7a19f720512458fb5e370bea07cb92e6e9241ad" => :mavericks
+    sha1 "59b9aca73406ea560990ec535239757030692aee" => :mountain_lion
   end
 
   def install

@@ -1,5 +1,3 @@
-require 'formula'
-
 class Cataclysm < Formula
   homepage 'http://www.cataclysmdda.com/'
   url 'https://github.com/CleverRaven/Cataclysm-DDA/archive/0.B.tar.gz'

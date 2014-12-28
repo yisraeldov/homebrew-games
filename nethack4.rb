@@ -1,5 +1,3 @@
-require "formula"
-
 class Nethack4 < Formula
   homepage "http://nethack4.org"
 

@@ -9,9 +9,9 @@ class Mess < Formula
   bottle do
     root_url "https://downloads.sf.net/project/machomebrew/Bottles/games"
     cellar :any
-    sha1 "0f73d765cdb7ada1c032b8dea51bfb584abf1383" => :yosemite
-    sha1 "1d70b67b8a47b58b38e5be508a6f925e57e78256" => :mavericks
-    sha1 "3926b6f11f591d766e33f8221dd83f7983ae6e20" => :mountain_lion
+    sha1 "4c3b32a691eafd982e510149a43dd970a9ebdc67" => :yosemite
+    sha1 "f7fe9072c5ed0e69c525fab77f65b63878634ca6" => :mavericks
+    sha1 "6328918f90dea35dc2c5718d4fb6b37b8c6ad190" => :mountain_lion
   end
 
   depends_on "sdl2"

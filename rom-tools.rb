@@ -9,9 +9,9 @@ class RomTools < Formula
   bottle do
     root_url "https://downloads.sf.net/project/machomebrew/Bottles/games"
     cellar :any
-    sha1 "731e38a5246a2c87fe73748852c7f66012d17bb5" => :yosemite
-    sha1 "4e1c9496362e207c32f2fdd4b04201a0c2480b6c" => :mavericks
-    sha1 "12c9e0f1ae6ce2ecb1099664f7b98ba6a5bfc18a" => :mountain_lion
+    sha1 "adf2108028943db26719454cc0c8dc2ca6865e07" => :yosemite
+    sha1 "4e4e34e7edac3477b3416f1d81f8ac385c07be47" => :mavericks
+    sha1 "2f46e461f675e79dd2d1b77cab87b39c9009e6c8" => :mountain_lion
   end
 
   depends_on "sdl2"

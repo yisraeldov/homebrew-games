@@ -3,6 +3,14 @@ class Ppsspp < Formula
   url "https://github.com/hrydgard/ppsspp.git", :tag => "v0.9.9.1"
   head "https://github.com/hrydgard/ppsspp.git"
 
+  bottle do
+    root_url "https://downloads.sf.net/project/machomebrew/Bottles/games"
+    cellar :any
+    sha1 "6f2e7663ce17d2e8c94e1845527bb20743cd5140" => :yosemite
+    sha1 "d242a87db02e65c2bef5f0ef974e2daeeacafdf1" => :mavericks
+    sha1 "bf7618abae1db1aa500d4eee524f1a8655bb24c4" => :mountain_lion
+  end
+
   depends_on "cmake" => :build
   depends_on "sdl"
   depends_on "ffmpeg"

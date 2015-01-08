@@ -25,8 +25,12 @@ class Freeciv < Formula
   depends_on "glib" if build.with?("gtk+") || build.with?("gtk+3")
 
   def install
-    args = ["--disable-debug", "--disable-dependency-tracking",
-            "--prefix=#{prefix}"]
+    args = %W[
+      --disable-debug
+      --disable-dependency-tracking
+      --prefix=#{prefix}
+      --with-readline=#{Formula["readline"].opt_prefix}
+    ]
 
     if build.include? "disable-nls"
       args << "--disable-nls"

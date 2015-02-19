@@ -27,11 +27,11 @@ class Minetest < Formula
   end
 
   stable do
-    url "https://github.com/minetest/minetest/archive/0.4.11.tar.gz"
-    sha1 "8af33253e0ac3a2c43d8127462e51461f9761343"
+    url "https://github.com/minetest/minetest/archive/0.4.12.tar.gz"
+    sha1 "1ea404afd37ca3496b6ad8a8c6ebc28a317fe54c"
 
     resource "minetest_game" do
-      url "https://github.com/minetest/minetest_game.git", :tag => "0.4.11"
+      url "https://github.com/minetest/minetest_game.git", :tag => "0.4.12"
     end
   end
 

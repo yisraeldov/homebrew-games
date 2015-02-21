@@ -14,4 +14,10 @@ class DwarfFortress < Formula
     rm_rf "sdl" # only contains a readme
     libexec.install Dir["*"]
   end
+
+  def caveats; <<-EOS.undent
+    If you're using a retina display, the PRINT_MODE should
+    be changed to STANDARD in #{libexec}/data/init/init.txt
+    EOS
+  end
 end

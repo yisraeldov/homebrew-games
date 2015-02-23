@@ -23,9 +23,6 @@ class Ppsspp < Formula
   end
 
   def install
-    # Make sure CMake grabs version info
-    ENV["GIT_DIR"] = cached_download/".git"
-
     # Build type will be set to "Release" by default
     args = std_cmake_args
     args.delete "-DCMAKE_BUILD_TYPE=None"

@@ -36,11 +36,11 @@ class Minetest < Formula
   end
 
   bottle do
-    root_url "https://downloads.sf.net/project/machomebrew/Bottles/games"
+    root_url "https://homebrew.bintray.com/bottles-games"
     cellar :any
-    sha1 "761719bd9e84497fcb0a15f95efa06f2f65dde2d" => :yosemite
-    sha1 "f7a19f720512458fb5e370bea07cb92e6e9241ad" => :mavericks
-    sha1 "59b9aca73406ea560990ec535239757030692aee" => :mountain_lion
+    sha1 "f2bb3bc988d893bbcb94efa5f22c18045ed570bd" => :yosemite
+    sha1 "284fb796ccd3c38b051eaf8aeb013d30b66df20d" => :mavericks
+    sha1 "0e7e1942b99ef96a11735b6be6918b7247e4cf17" => :mountain_lion
   end
 
   def install

@@ -1,16 +1,13 @@
-require 'formula'
-
 class Homeworlds < Formula
-  homepage 'https://github.com/Quuxplusone/Homeworlds/'
-  url 'https://github.com/Quuxplusone/Homeworlds.git',
-    :revision => 'd0543623d21663d075c64ba050f2eef54f679f5e'
-  version '20120723'
+  homepage "https://github.com/Quuxplusone/Homeworlds/"
+  url "https://github.com/Quuxplusone/Homeworlds.git",
+    :revision => "917cd7e7e6d0a5cdfcc56cd69b41e3e80b671cde"
+  version "20141022"
 
-  depends_on 'wxmac'
+  depends_on "wxmac"
 
   def install
-    system 'make'
-    bin.install "wxgui" => "homeworlds-wx"
-    bin.install "annotate" => "homeworlds-cli"
+    system "make"
+    bin.install "wxgui" => "homeworlds-wx", "annotate" => "homeworlds-cli"
   end
 end

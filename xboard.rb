@@ -1,9 +1,7 @@
-require 'formula'
-
 class Xboard < Formula
+  homepage 'https://www.gnu.org/software/xboard/'
   url 'http://ftpmirror.gnu.org/xboard/xboard-4.7.3.tar.gz'
-  mirror 'http://ftp.gnu.org/gnu/xboard/xboard-4.7.3.tar.gz'
-  homepage 'http://www.gnu.org/software/xboard/'
+  mirror 'https://ftp.gnu.org/gnu/xboard/xboard-4.7.3.tar.gz'
   sha1 'dab9a69f3c8afd70a7a2e5e31f48d31fd9fbbabb'
 
   depends_on 'pkg-config' => :build

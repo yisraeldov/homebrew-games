@@ -1,7 +1,5 @@
-require 'formula'
-
 class OpenTyrian < Formula
-  homepage "http://code.google.com/p/opentyrian/"
+  homepage "https://code.google.com/p/opentyrian/"
   url "http://www.camanis.net/opentyrian/releases/opentyrian-2.1.20130907-src.tar.gz"
   sha1 "c5b97aea3931db6889acb639e59e619162b05183"
 

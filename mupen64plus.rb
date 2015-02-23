@@ -1,8 +1,6 @@
-require 'formula'
-
 class Mupen64plus < Formula
+  homepage 'https://code.google.com/p/mupen64plus/'
   url 'https://mupen64plus.googlecode.com/files/mupen64plus-bundle-src-2.0.tar.gz'
-  homepage 'http://code.google.com/p/mupen64plus/'
   sha1 '078a518e1b162bd88993e1815967fdafe61d9e28'
 
   option 'disable-osd', 'Disables the On Screen Display'

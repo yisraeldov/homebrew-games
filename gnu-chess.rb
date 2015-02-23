@@ -1,9 +1,7 @@
-require 'formula'
-
 class GnuChess < Formula
-  homepage 'http://www.gnu.org/software/chess/'
+  homepage 'https://www.gnu.org/software/chess/'
   url 'http://ftpmirror.gnu.org/chess/gnuchess-6.1.1.tar.gz'
-  mirror 'http://ftp.gnu.org/gnu/chess/gnuchess-6.1.1.tar.gz'
+  mirror 'https://ftp.gnu.org/gnu/chess/gnuchess-6.1.1.tar.gz'
   sha1 '12703cef3c111e5a56a7de8ff3804306927a820a'
 
   def install

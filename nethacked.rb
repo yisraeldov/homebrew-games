@@ -1,4 +1,3 @@
-require 'formula'
 require 'etc'
 
 # Bugfixed and interface-patched Nethack.
@@ -20,7 +19,7 @@ require 'etc'
 # - @adamv
 
 class Nethacked < Formula
-  homepage 'http://nethacked.github.io/'
+  homepage 'https://nethacked.github.io/'
   url 'https://github.com/nethacked/nethacked/archive/1.0.tar.gz'
   sha1 'c30af9be9846616683f669ff6d898fa765bec8cf'
 

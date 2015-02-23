@@ -4,6 +4,8 @@ class DwarfFortress < Formula
   version "0.40.24"
   sha1 "e9e5c5d9d5c2dd4c8078060b705829d45231051d"
 
+  depends_on :x11
+
   def install
     (bin+"dwarffortress").write <<-EOS.undent
       #!/bin/sh

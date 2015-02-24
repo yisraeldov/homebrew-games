@@ -35,9 +35,4 @@ class Ppsspp < Formula
       bin.write_exec_script "#{prefix}/PPSSPPSDL.app/Contents/MacOS/PPSSPPSDL"
     end
   end
-
-  test do
-    # FIXME: implement a proper test when command arguments get supported
-    true
-  end
 end

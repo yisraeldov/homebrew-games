@@ -6,6 +6,13 @@ class Freeciv < Formula
   sha1 "045931a0763df33e1e2114dde2d189a24861ce13"
   head "svn://svn.gna.org/svn/freeciv/trunk"
 
+  bottle do
+    root_url "https://homebrew.bintray.com/bottles-games"
+    sha1 "e6fef82f1c970359033bff3cd9d8f809b2023f85" => :yosemite
+    sha1 "a495fc6b1197a2e849c08cc0fff194b02ecb267d" => :mavericks
+    sha1 "a1a7dbcd4b0ee32c72586e14f7fe53fc5ec5797c" => :mountain_lion
+  end
+
   option "disable-nls" , "Disable NLS support"
   option "without-sdl" , "Disable the SDL Freeciv client"
   option "with-gtk+" , "Disable the GTK+ Freeciv client"

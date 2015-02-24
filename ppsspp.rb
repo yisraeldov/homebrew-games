@@ -4,11 +4,11 @@ class Ppsspp < Formula
   head "https://github.com/hrydgard/ppsspp.git"
 
   bottle do
-    root_url "https://downloads.sf.net/project/machomebrew/Bottles/games"
+    root_url "https://homebrew.bintray.com/bottles-games"
     cellar :any
-    sha1 "6f2e7663ce17d2e8c94e1845527bb20743cd5140" => :yosemite
-    sha1 "d242a87db02e65c2bef5f0ef974e2daeeacafdf1" => :mavericks
-    sha1 "bf7618abae1db1aa500d4eee524f1a8655bb24c4" => :mountain_lion
+    sha1 "aac8e32c6fece2f96cc435a251dca0e37b0bc1ff" => :yosemite
+    sha1 "fd11a895ddbe25bd32d49d0bf2bcd942c17cc7f2" => :mavericks
+    sha1 "66a032027e962f82e245ad35fd9f49e448368f64" => :mountain_lion
   end
 
   depends_on "cmake" => :build

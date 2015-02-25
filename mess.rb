@@ -7,11 +7,11 @@ class Mess < Formula
   head "https://github.com/mamedev/mame.git"
 
   bottle do
-    root_url "https://downloads.sf.net/project/machomebrew/Bottles/games"
+    root_url "https://homebrew.bintray.com/bottles-games"
     cellar :any
-    sha1 "4c3b32a691eafd982e510149a43dd970a9ebdc67" => :yosemite
-    sha1 "f7fe9072c5ed0e69c525fab77f65b63878634ca6" => :mavericks
-    sha1 "6328918f90dea35dc2c5718d4fb6b37b8c6ad190" => :mountain_lion
+    sha1 "9e964f1dffbc39423b28cb8620082de336ea3cde" => :yosemite
+    sha1 "d9bda37c8afddb2ca7cbeff15c9f0833d741ff44" => :mavericks
+    sha1 "d8ce1177c8f6c0e4d814f995a03b62828fa42dec" => :mountain_lion
   end
 
   depends_on "sdl2"

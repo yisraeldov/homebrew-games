@@ -1,8 +1,8 @@
 class Ume < Formula
   homepage "http://mamedev.org/"
-  url "https://github.com/mamedev/mame/archive/mame0157.tar.gz"
-  sha1 "cac1ccb4194715be63dd4d4754a575b9e1c11ea3"
-  version "0.157"
+  url "https://github.com/mamedev/mame/archive/mame0158.tar.gz"
+  sha1 "c9f880e619c23290bc655542b5eebbc127596663"
+  version "0.158"
 
   head "https://github.com/mamedev/mame.git"
 
@@ -28,5 +28,9 @@ class Ume < Formula
     else
       bin.install "ume"
     end
+  end
+
+  test do
+    system "#{bin}/ume", "-help"
   end
 end

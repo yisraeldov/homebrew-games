@@ -7,11 +7,11 @@ class Mame < Formula
   head "https://github.com/mamedev/mame.git"
 
   bottle do
-    root_url "https://downloads.sf.net/project/machomebrew/Bottles/games"
+    root_url "https://homebrew.bintray.com/bottles-games"
     cellar :any
-    sha1 "80ddf4088a09db73e30e898412379a4e19a772a8" => :yosemite
-    sha1 "fa7ce6374dd8e9a97fa07801ab3d5cd7341094bf" => :mavericks
-    sha1 "1d7e69beff269c0dae1228ff6dfc8700d78e9fe9" => :mountain_lion
+    sha1 "944f2356be591fce21ab46a9835f78cf59de00a0" => :yosemite
+    sha1 "f7da246db11d200675d403ad8d030970a1ddafa0" => :mavericks
+    sha1 "94db4a29f1ffd38b063b6073eebe46333c8e9211" => :mountain_lion
   end
 
   depends_on "sdl2"

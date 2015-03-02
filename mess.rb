@@ -9,9 +9,9 @@ class Mess < Formula
   bottle do
     root_url "https://homebrew.bintray.com/bottles-games"
     cellar :any
-    sha1 "9e964f1dffbc39423b28cb8620082de336ea3cde" => :yosemite
-    sha1 "d9bda37c8afddb2ca7cbeff15c9f0833d741ff44" => :mavericks
-    sha1 "d8ce1177c8f6c0e4d814f995a03b62828fa42dec" => :mountain_lion
+    sha1 "dd6dfd33e569d2ab468fea1ef59caa044b1e284a" => :yosemite
+    sha1 "15a3b9edc45ae22748cf201feb5227f86b1ff54c" => :mavericks
+    sha1 "a7242058940f227761d5221de2e2b0ca8cd9c065" => :mountain_lion
   end
 
   depends_on "sdl2"

@@ -1,8 +1,8 @@
 class Ume < Formula
   homepage "http://mamedev.org/"
-  url "https://github.com/mamedev/mame/archive/mame0158.tar.gz"
-  sha1 "c9f880e619c23290bc655542b5eebbc127596663"
-  version "0.158"
+  url "https://github.com/mamedev/mame/archive/mame0159.tar.gz"
+  sha1 "c68b620b04c6da4fe6776a13cdc0aed776a1bed0"
+  version "0.159"
 
   head "https://github.com/mamedev/mame.git"
 

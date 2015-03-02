@@ -9,8 +9,9 @@ class Ume < Formula
   bottle do
     root_url "https://homebrew.bintray.com/bottles-games"
     cellar :any
-    sha1 "61b3ca6ad1c5a780e5f716d4b13f5e39d523b69f" => :mavericks
-    sha1 "1c1793d00682bbaa95e23009ecf0373f74ea3b1d" => :mountain_lion
+    sha1 "2bf12725b28257832a65c3df2ccab4518511b30c" => :yosemite
+    sha1 "4344cafb83d3c51185df99588353d39133198dc0" => :mavericks
+    sha1 "512b83dd3e8001e622efca1c8d080e23b028c28d" => :mountain_lion
   end
 
   depends_on "sdl2"

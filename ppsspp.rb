@@ -1,6 +1,6 @@
 class Ppsspp < Formula
   homepage "http://ppsspp.org/"
-  url "https://github.com/hrydgard/ppsspp.git", :tag => "v1.0"
+  url "https://github.com/hrydgard/ppsspp.git", :tag => "v1.0.1"
   head "https://github.com/hrydgard/ppsspp.git"
 
   bottle do

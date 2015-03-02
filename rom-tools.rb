@@ -7,11 +7,11 @@ class RomTools < Formula
   head "https://github.com/mamedev/mame.git"
 
   bottle do
-    root_url "https://downloads.sf.net/project/machomebrew/Bottles/games"
+    root_url "https://homebrew.bintray.com/bottles-games"
     cellar :any
-    sha1 "adf2108028943db26719454cc0c8dc2ca6865e07" => :yosemite
-    sha1 "4e4e34e7edac3477b3416f1d81f8ac385c07be47" => :mavericks
-    sha1 "2f46e461f675e79dd2d1b77cab87b39c9009e6c8" => :mountain_lion
+    sha1 "05c529d7f01c79c254745287e6a50aa460530276" => :yosemite
+    sha1 "015a181163584065d72a2d9224fcdbc1ce0ad766" => :mavericks
+    sha1 "710589f511179433799a6c325137ab7bccb52e96" => :mountain_lion
   end
 
   depends_on "sdl2"

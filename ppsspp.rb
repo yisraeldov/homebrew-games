@@ -6,9 +6,9 @@ class Ppsspp < Formula
   bottle do
     root_url "https://homebrew.bintray.com/bottles-games"
     cellar :any
-    sha1 "aac8e32c6fece2f96cc435a251dca0e37b0bc1ff" => :yosemite
-    sha1 "fd11a895ddbe25bd32d49d0bf2bcd942c17cc7f2" => :mavericks
-    sha1 "66a032027e962f82e245ad35fd9f49e448368f64" => :mountain_lion
+    sha1 "9ec048258882fb2ea2f71661f6ccf4bcd4373ff6" => :yosemite
+    sha1 "cfd18d4a6a6d2e07daa74d6a626d9614c6f201c3" => :mavericks
+    sha1 "b6f556ce03d30c0c7ab57c21663a929ebdb9e0dd" => :mountain_lion
   end
 
   depends_on "cmake" => :build

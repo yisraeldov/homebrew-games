@@ -7,11 +7,11 @@ class Cataclysm < Formula
   head "https://github.com/CleverRaven/Cataclysm-DDA.git"
 
   bottle do
-    root_url "https://downloads.sf.net/project/machomebrew/Bottles/games"
+    root_url "https://homebrew.bintray.com/bottles-games"
     cellar :any
-    sha1 "b1b39dc6f76b718ddf4cc25355202bfd233d882c" => :yosemite
-    sha1 "6184eb62cc81e0e40145c1334494571bcfe4d8b3" => :mavericks
-    sha1 "411e24d73210b15c47859727aad6c090413a0a8f" => :mountain_lion
+    sha256 "d238e5fa398e9dba4b807108a5885025185f91269128b47690ce8422c7cd6d44" => :yosemite
+    sha256 "2d8ab27ec069acecb344bfa2ab57f346352650de1877767dcb220af7129ae879" => :mavericks
+    sha256 "b65caa16de5a82ef49ce723e2d8e9be800ee88fc5f8f22ad7c349518054b0ced" => :mountain_lion
   end
 
   needs :cxx11

@@ -4,6 +4,13 @@ class Wesnoth < Formula
   url "https://downloads.sourceforge.net/project/wesnoth/wesnoth-1.12/wesnoth-1.12.1/wesnoth-1.12.1.tar.bz2"
   sha256 "70404764370db05e496a4e033e09c26cdc47fa6558271d803a44c4ebb7b6efe8"
 
+  bottle do
+    root_url "https://homebrew.bintray.com/bottles-games"
+    sha256 "7ad78744ea8d85ab4b96d10e6cfe521ddfce43bb08b6763fbe864dc21dfd8464" => :yosemite
+    sha256 "ab92ebdca61c1022914580d1dd154cb5a1be0b392505716cfd80cbee7f4ccfbe" => :mavericks
+    sha256 "e36e784cd1da06dc5582e9555e41c7a551f18f7239c643cef6236ee02c644ca3" => :mountain_lion
+  end
+
   option "with-ccache", "Speeds recompilation, convenient for beta testers"
   option "with-debug", "Build with debugging symbols"
 

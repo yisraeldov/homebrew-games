@@ -1,8 +1,8 @@
 class Cataclysm < Formula
   homepage 'http://www.cataclysmdda.com/'
-  url 'https://github.com/CleverRaven/Cataclysm-DDA/archive/0.B.tar.gz'
-  sha1 '28849b6293037deefe320313eb88d076ef4d339d'
-  version '0.B'
+  url 'https://github.com/CleverRaven/Cataclysm-DDA/archive/0.C.tar.gz'
+  sha1 '37e317a75e7bf7e3425da86382551958d890e872'
+  version '0.C'
 
   head "https://github.com/CleverRaven/Cataclysm-DDA.git"
 

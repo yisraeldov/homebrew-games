@@ -1,8 +1,8 @@
 class RomTools < Formula
   homepage "http://mamedev.org/"
-  url "https://github.com/mamedev/mame/archive/mame0159.tar.gz"
-  sha1 "c68b620b04c6da4fe6776a13cdc0aed776a1bed0"
-  version "0.159"
+  url "https://github.com/mamedev/mame/archive/mame0160.tar.gz"
+  sha1 "506c49be812d12a04913b46acac2aed2025df1ff"
+  version "0.160"
 
   head "https://github.com/mamedev/mame.git"
 

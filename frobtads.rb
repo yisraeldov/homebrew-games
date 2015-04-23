@@ -6,7 +6,7 @@ class Frobtads < Formula
   sha1 '330217c0b6ee298bf9db986bc4ce84b86aa5e3e2'
 
   head do
-    url 'git://git.assembla.com/frobtads.git'
+    url 'https://github.com/realnc/frobtads.git'
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build

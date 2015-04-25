@@ -4,6 +4,13 @@ class Angband < Formula
   mirror "https://mirrors.kernel.org/debian/pool/main/a/angband/angband_3.5.1.orig.tar.gz"
   sha256 "c5ca3ab75fd820a49eb2b9ab8b1c2a811ff992276f9800cc61c686e90bd4d447"
 
+  bottle do
+    root_url "https://homebrew.bintray.com/bottles-games"
+    sha256 "0ddb3329005ec7acda583248b4ce59cad057fd4cb642942000035695c1c76daa" => :yosemite
+    sha256 "2abb9acb242fcf925ec62cc818d7577261d6f7b9df2d505173da6bb4b47148d7" => :mavericks
+    sha256 "930a2861f6faac4d8756f64d2340cbafda08129ee9d28e507962cca5afbf7697" => :mountain_lion
+  end
+
   head do
     url "https://github.com/angband/angband.git"
     depends_on "automake" => :build

@@ -1,8 +1,8 @@
 class Wesnoth < Formula
   homepage "http://www.wesnoth.org/"
   head "https://github.com/wesnoth/wesnoth.git"
-  url "https://downloads.sourceforge.net/project/wesnoth/wesnoth-1.12/wesnoth-1.12.1/wesnoth-1.12.1.tar.bz2"
-  sha256 "70404764370db05e496a4e033e09c26cdc47fa6558271d803a44c4ebb7b6efe8"
+  url "https://downloads.sourceforge.net/project/wesnoth/wesnoth-1.12/wesnoth-1.12.2/wesnoth-1.12.2.tar.bz2"
+  sha256 "1f4f76e5fd0ce175a3eb7b9855aff7a58dc75899c534d7653d97ac9fd4fe798b"
 
   bottle do
     root_url "https://homebrew.bintray.com/bottles-games"

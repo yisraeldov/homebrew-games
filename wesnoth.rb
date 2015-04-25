@@ -6,9 +6,9 @@ class Wesnoth < Formula
 
   bottle do
     root_url "https://homebrew.bintray.com/bottles-games"
-    sha256 "7ad78744ea8d85ab4b96d10e6cfe521ddfce43bb08b6763fbe864dc21dfd8464" => :yosemite
-    sha256 "ab92ebdca61c1022914580d1dd154cb5a1be0b392505716cfd80cbee7f4ccfbe" => :mavericks
-    sha256 "e36e784cd1da06dc5582e9555e41c7a551f18f7239c643cef6236ee02c644ca3" => :mountain_lion
+    sha256 "6cceadef75e97dce80f23b6dd537117c22ad8c70c4fffc60b1f3bf626d7a78e4" => :yosemite
+    sha256 "227f920fc3bfffd1ec97d73289516880fa6f3a041c809aca52a1a75a4caa7f9f" => :mavericks
+    sha256 "788803a5d90371e3e622f9469014062a520ea7e3e2bb0e9573ce1192baf53744" => :mountain_lion
   end
 
   option "with-ccache", "Speeds recompilation, convenient for beta testers"

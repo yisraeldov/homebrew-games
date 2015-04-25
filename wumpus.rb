@@ -3,6 +3,14 @@ class Wumpus < Formula
   url "http://www.catb.org/~esr/wumpus/wumpus-1.6.tar.gz"
   sha256 "965e49b3e53f44023994b42b3aa568ad79d3a2287bb0a07460b601500c9ae16d"
 
+  bottle do
+    root_url "https://homebrew.bintray.com/bottles-games"
+    cellar :any
+    sha256 "d3b2684fa7a1a7a9c676bc0f7d635ed3913f6734c7810f0c6fa234044ca9a147" => :yosemite
+    sha256 "cb277b7dab8ca78ea627f80a9596807b7cd5e8bbba389d0117b4a743bdfdaacf" => :mavericks
+    sha256 "c92ce6674f45ee484435cfd5746b4c6ae80d8ced9a5901e254b7e5bacadc8726" => :mountain_lion
+  end
+
   # Patches to allow `make install` to specify a prefix; both patches
   # can be removed in the next release
   patch do

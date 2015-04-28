@@ -4,6 +4,14 @@ class Openclonk < Formula
   sha256 "1daa437a598f09375d85d0cd6cfb8655f285ae9f1939221cea2f587e531133ba"
   head "https://github.com/openclonk/openclonk", :using => :git
 
+  bottle do
+    root_url "https://homebrew.bintray.com/bottles-games"
+    cellar :any
+    sha256 "3e61a12dca0998d1c0a78466569abb325c32a26549034b1569cb187f479082d0" => :yosemite
+    sha256 "76e83695bfa80b4387004961a6693d555993a4a603cdcd386908edfbd195592a" => :mavericks
+    sha256 "f31c5f4100c5bd8ab22ca8d25dbf52df5b40ffbaed1567f1cb325547fcafcf2a" => :mountain_lion
+  end
+
   depends_on :macos => :mountain_lion
   depends_on "cmake" => :build
   depends_on "jpeg"

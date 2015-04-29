@@ -3,6 +3,14 @@ class Mupen64plus < Formula
   url "https://github.com/mupen64plus/mupen64plus-core/releases/download/2.5/mupen64plus-bundle-src-2.5.tar.gz"
   sha256 "9c75b9d826f2d24666175f723a97369b3a6ee159b307f7cc876bbb4facdbba66"
 
+  bottle do
+    root_url "https://homebrew.bintray.com/bottles-games"
+    cellar :any
+    sha256 "fcc0f6c7b4b125d5d00eaf22870aaa1315900913007703baab07848e71fd7b36" => :yosemite
+    sha256 "a2535a29684c1cc94f16fac22ad209490b9b8319f7bfa189c81d716ee206e51a" => :mavericks
+    sha256 "722bdaeb709fa4e4e2defae1f5f92ce15c9c19a2ed1e01e182c5c165936d69a3" => :mountain_lion
+  end
+
   option "without-osd", "Disables the On Screen Display"
   option "with-new-dynarec", "Replace dynamic recompiler with Ari64\"s experimental dynarec"
   option "with-src", "Build with libsamplerate"

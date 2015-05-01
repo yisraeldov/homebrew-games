@@ -57,7 +57,7 @@ class Nethack4 < Formula
   end
 
   head do
-    url "https://gitorious.org/nitrohack/ais523.git", :branch => "nicehack"
+    url "http://nethack4.org/media/nethack4.git"
 
     # yes, even though we build without tiles - see http://trac.nethack4.org/ticket/646
     depends_on "libpng"

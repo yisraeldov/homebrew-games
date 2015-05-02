@@ -9,9 +9,9 @@ class Mame < Formula
   bottle do
     root_url "https://homebrew.bintray.com/bottles-games"
     cellar :any
-    sha256 "8f39fe4f6ad9db996c593d2203a7002bf57beb3cb6b7136fd72d3bc72f8468be" => :yosemite
-    sha256 "d4a71a98ead64f5b8382a35d0d4b0986240b9b74f9322ec264a1b0b29b2cd1f1" => :mavericks
-    sha256 "d1275ee0229aa5c295d461a32dfeddfa4b72ea8d80d315261ff3bf5f15163732" => :mountain_lion
+    sha256 "2fd889ac6550c7a626ef4980acdc4ae06813e7c5be925839cb8e7ad5b8ecd13d" => :yosemite
+    sha256 "3e1e8361d872e70cf46e8e58f35bb96642bdab45e9697bb69c14facafebbcfa9" => :mavericks
+    sha256 "e3c19957e58f500fdc6aa7983a59495534f79a1f6772ea0144a837f30f803f14" => :mountain_lion
   end
 
   depends_on "sdl2"

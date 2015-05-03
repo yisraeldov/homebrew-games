@@ -9,9 +9,9 @@ class RomTools < Formula
   bottle do
     root_url "https://homebrew.bintray.com/bottles-games"
     cellar :any
-    sha256 "be5b2390e63a6f86bb7021afc119d74f40c0a3c051399d0beccf748216bc0550" => :yosemite
-    sha256 "5ac067f43b03e6abcfcb248e081f9b24a8bb7516a7c08a1bdcd5c06604c88384" => :mavericks
-    sha256 "d52fb8f6b058044b7503a04002888d36b9438e6a89245aa4335fe443f497e867" => :mountain_lion
+    sha256 "375cb5259041202c2396e02ce4755fdbd23c105652ed137e8cc6a083c1957c5d" => :yosemite
+    sha256 "9e155683935968140c00dd20e53e9d25fd2c697695f625302c73ef5b145ad267" => :mavericks
+    sha256 "d3d88cc2f621dffcc081ef549e5bb06f7eb0f98ce8de38dadc63efd188ee7100" => :mountain_lion
   end
 
   depends_on "sdl2"

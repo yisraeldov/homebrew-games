@@ -5,6 +5,13 @@ class Openttd < Formula
 
   head "git://git.openttd.org/openttd/trunk.git"
 
+  bottle do
+    root_url "https://homebrew.bintray.com/bottles-games"
+    sha256 "bf9d0c015c423c12ce937f09e69f435f8d46446735b665c333af874a09299a55" => :yosemite
+    sha256 "2114a0425310d168ee2d93cb55e25364765c4c532be99a2c99ebbe9b5c7f2a81" => :mavericks
+    sha256 "fb2541820550c54dcebdac93addfe07c84eb9c2c9069d3b97a5b57677483dfff" => :mountain_lion
+  end
+
   depends_on "lzo"
   depends_on "xz"
   depends_on "pkg-config" => :build

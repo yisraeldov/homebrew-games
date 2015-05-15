@@ -1,14 +1,13 @@
-require 'formula'
-
 class Stormlib < Formula
   homepage "http://www.zezula.net/en/mpq/stormlib.html"
-  url "https://github.com/ladislav-zezula/StormLib/archive/v9.00a.tar.gz"
-  sha1 "74bdda9309cce208d4982c9a1f5d740d246a9755"
-  version "9.00a"
+  url "https://github.com/ladislav-zezula/StormLib/archive/v9.10.tar.gz"
+  sha256 "c3aca98b5a95649dfb2110eaf475eb6dd87119db62c3564f8b09b3d1d1f63f96"
+
   head "https://github.com/ladislav-zezula/StormLib.git"
 
   depends_on "cmake" => :build
 
+  # prevents cmake from trying to write to /Library/Frameworks/
   patch :DATA
 
   def install

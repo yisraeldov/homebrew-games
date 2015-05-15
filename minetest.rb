@@ -35,10 +35,10 @@ class Minetest < Formula
 
   bottle do
     root_url "https://homebrew.bintray.com/bottles-games"
-    cellar :any
-    sha1 "f2bb3bc988d893bbcb94efa5f22c18045ed570bd" => :yosemite
-    sha1 "284fb796ccd3c38b051eaf8aeb013d30b66df20d" => :mavericks
-    sha1 "0e7e1942b99ef96a11735b6be6918b7247e4cf17" => :mountain_lion
+    revision 1
+    sha256 "aa99f6dd204472671291622f339385369a047560ea5083d5b5e359a4e9362f92" => :yosemite
+    sha256 "531c767b5c13969525e318d599250342a78703b97f0838db35e548d96a7dc281" => :mavericks
+    sha256 "24573fdef24471d4f00f293c512c97c9342c02173d6bcc2fbd4edddae49cb980" => :mountain_lion
   end
 
   def install

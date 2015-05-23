@@ -1,31 +1,31 @@
-require "formula"
-require "etc"
-
 class Bastet < Formula
   homepage "http://fph.altervista.org/prog/bastet.html"
-  url "http://fph.altervista.org/prog/files/bastet-0.41.tgz"
-  sha1 "644a0f76adedef84946159520c1639ff0c6c47ec"
+  url "https://github.com/fph/bastet/archive/0.43.1.tar.gz"
+  sha256 "c47a84fb17c2895ea7a85b72ea40a154a03c1114c178ea7fee341215153afcdc"
 
-  patch :p1 do
-    url "http://fph.altervista.org/prog/files/bastet-0.41-osx-patch.diff"
-    sha1 "bf38253d07889025c05440a77b4a498dfd952a2c"
+  # "friend declaration specifying a default argument must be a definition"
+  patch do
+    url "https://github.com/fph/bastet/commit/0323cb477dd5293b5198e4b2f47b4441d90de2d8.patch"
+    sha256 "244884bed959a13e14560041f0493dc6f39727a5c8da1656b7b83e16cb8be667"
   end
 
+  patch do
+    url "https://github.com/fph/bastet/commit/968324901dae2c80bdbdb40eca1b514498380ba8.patch"
+    sha256 "f68bd3aa62e4b861b869aca1125f91f90493b6c331a7850bc7b7f3a19989e1ed"
+  end
+
+  depends_on "boost"
+
   def install
-    inreplace "Makefile" do |s|
-      s.change_make_var! "BIN_PREFIX", "#{bin}/"
-      s.change_make_var! "DATA_PREFIX", "#{var}/"
-      s.change_make_var! "GAME_USER", Etc.getpwuid.name
-    end
+    inreplace %w[Config.cpp bastet.6], "/var", var
+
     system "make", "all"
 
-    # for some reason, these aren't created automatically
-    bin.mkpath
-    var.mkpath
+    # this must exist for games to be saved globally
+    (var/"games").mkpath
+    touch "#{var}/games/bastet.scores2"
 
-    system "make", "install"
-
-    # the makefile doesn't install the manpage
+    bin.install "bastet"
     man6.install "bastet.6"
   end
 end

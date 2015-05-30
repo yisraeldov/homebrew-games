@@ -14,9 +14,10 @@ class Freeciv < Formula
 
   bottle do
     root_url "https://homebrew.bintray.com/bottles-games"
-    sha256 "0b89d748eb1930b87f68409a74649f9eef48825bf0084ad3909ce4abcc8558a8" => :yosemite
-    sha256 "43e813ae455ec4b723d5430a800e8fffd738e0d5e16da7430b430a9d72b3757c" => :mavericks
-    sha256 "2b5f84efdabd0c925217cfb4e8bcc2e3228ac1196082bdd3be0887e122c2abb8" => :mountain_lion
+    revision 1
+    sha256 "c34b7a955b1a534a87392202039584965ba7eb4bca197808395a91b485d417b1" => :yosemite
+    sha256 "494f799328f7d7a4bc657f19e38c0edef00dcc19cf12e073b9bcf44db786ace2" => :mavericks
+    sha256 "f3a1c6f0606dce6b0a2d9bc7c854867c5be127c6a60eea497189d208d816a35e" => :mountain_lion
   end
 
   option "without-nls", "Disable NLS support"

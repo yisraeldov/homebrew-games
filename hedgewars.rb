@@ -16,6 +16,14 @@ class Hedgewars < Formula
       sha256 "ee8f4e702197b7908e7fd8124fbbb54a4c7cf3792b1de2ff29a4e709ce721cbd"
     end
   end
+  bottle do
+    root_url "https://homebrew.bintray.com/bottles-games"
+    cellar :any
+    sha256 "ecfa4fdcf61d7092808eaa3ea9d55548d2bdb3d3c92d16f429d009a66477b720" => :yosemite
+    sha256 "e26fe494b20c8bbaf4b7ddc938e22c5be21a938411cce30f4fd822bd355d4c06" => :mavericks
+    sha256 "cc3962dcfaf925f88568ae2bb76b7ad19462814409a8c0b67d45521997519faa" => :mountain_lion
+  end
+
 
   head "https://code.google.com/p/hedgewars/", :using => :hg
 

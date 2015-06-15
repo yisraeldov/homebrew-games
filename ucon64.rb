@@ -4,6 +4,11 @@ class Ucon64 < Formula
   url "https://downloads.sourceforge.net/ucon64/ucon64-2.0.0-src.tar.gz"
   sha256 "62064324a1912387f84ac9d4c521c5d5e7b80f2567e9f61bf0ab3e1d976c0127"
 
+  resource "super_bat_puncher_demo" do
+    url "http://morphcat.de/superbatpuncher/Super%20Bat%20Puncher%20Demo.zip"
+    sha256 "d74cb3ba11a4ef5d0f8d224325958ca1203b0d8bb4a7a79867e412d987f0b846"
+  end
+
   def install
     # ucon64's normal install process installs the discmage library in
     # the user's home folder. We want to store it inside the prefix, so
@@ -32,6 +37,9 @@ class Ucon64 < Formula
   end
 
   test do
-    system "#{bin}/ucon64", "--help", "--snes"
+    resource("super_bat_puncher_demo").stage testpath
+
+    assert_match "00000000  4e 45 53 1a  08 00 11 00  00 00 00 00  00 00 00 00",
+                 shell_output("#{bin}/ucon64 \"#{testpath}/Super Bat Puncher Demo.nes\"")
   end
 end

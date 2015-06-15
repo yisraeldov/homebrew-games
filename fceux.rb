@@ -5,6 +5,14 @@ class Fceux < Formula
   sha256 "804d11bdb4a195f3a580ce5d2d01be877582763378637e16186a22459f5fe5e1"
   revision 2
 
+  bottle do
+    root_url "https://homebrew.bintray.com/bottles-games"
+    cellar :any
+    sha256 "5a2fc373529149ab867256b5b8ba6e00520ff2d2e54b88a5c8ddeacb12f1644b" => :yosemite
+    sha256 "9348e088694ad88dff6a013b04e62acb9ab4290898c038b8317e792de46e4d0f" => :mavericks
+    sha256 "853048f6c9cc2021dd600c9d6e928a915bd21313775f2f824e5400ea59cc321e" => :mountain_lion
+  end
+
   deprecated_option "no-gtk" => "without-gtk+3"
 
   depends_on "pkg-config" => :build

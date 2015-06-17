@@ -1,6 +1,6 @@
 class Openttd < Formula
-  homepage "http://www.openttd.org/"
-  url "http://binaries.openttd.org/releases/1.5.0/openttd-1.5.0-source.tar.xz"
+  homepage "https://www.openttd.org/"
+  url "https://binaries.openttd.org/releases/1.5.0/openttd-1.5.0-source.tar.xz"
   sha256 "cb2735c3c94709430c58eb4e8820cd5d26b1a17447c34ca8792bb3432a3f7c2d"
 
   head "git://git.openttd.org/openttd/trunk.git"
@@ -17,17 +17,17 @@ class Openttd < Formula
   depends_on "pkg-config" => :build
 
   resource "opengfx" do
-    url "http://bundles.openttdcoop.org/opengfx/releases/0.5.2/opengfx-0.5.2.zip"
+    url "https://bundles.openttdcoop.org/opengfx/releases/0.5.2/opengfx-0.5.2.zip"
     sha256 "19be61f1cb04cbb3cb9602f0b8eb6e6f56ecbefbfdd6e0e03f9579e5a5c1cbc8"
   end
 
   resource "opensfx" do
-    url "http://bundles.openttdcoop.org/opensfx/releases/0.2.3/opensfx-0.2.3.zip"
+    url "https://bundles.openttdcoop.org/opensfx/releases/0.2.3/opensfx-0.2.3.zip"
     sha256 "3574745ac0c138bae53b56972591db8d778ad9faffd51deae37a48a563e71662"
   end
 
   resource "openmsx" do
-    url "http://bundles.openttdcoop.org/openmsx/releases/0.3.1/openmsx-0.3.1.zip"
+    url "https://bundles.openttdcoop.org/openmsx/releases/0.3.1/openmsx-0.3.1.zip"
     sha256 "92e293ae89f13ad679f43185e83fb81fb8cad47fe63f4af3d3d9f955130460f5"
   end
 

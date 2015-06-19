@@ -6,9 +6,9 @@ end
 
 class Ckan < Formula
   homepage "https://github.com/KSP-CKAN/CKAN/"
-  url "https://github.com/KSP-CKAN/CKAN/releases/download/v1.6.14/ckan.exe", :using => :nounzip
-  version "1.6.14"
-  sha256 "21619df57bdff0aa030109ab7d8d94309a4041e8bbd689f111550eb41151d63f"
+  url "https://github.com/KSP-CKAN/CKAN/releases/download/v1.6.23/ckan.exe", :using => :nounzip
+  version "1.6.23"
+  sha256 "6707f650b60d95f2a077012f0bcfffb8fef47b7607848d400b19d915907b143f"
 
   depends_on MonoDependency
 

@@ -1,9 +1,7 @@
-require 'formula'
-
 class Libtcod < Formula
   homepage 'http://roguecentral.org/doryen/libtcod/'
-  url 'https://bitbucket.org/jice/libtcod/get/1.5.1.tar.bz2'
-  sha1 '4bf117f2d29b0ad851552c84e8745dcf3ae0af2a'
+  url 'https://bitbucket.org/libtcod/libtcod/get/1.5.1.tar.bz2'
+  sha256 '290145f760371881bcc6aa3fda256a2927f9210acc3f0a7230c5dfd57d9052d0'
 
   depends_on 'cmake' => :build
   depends_on 'sdl'

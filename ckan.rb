@@ -6,9 +6,9 @@ end
 
 class Ckan < Formula
   homepage "https://github.com/KSP-CKAN/CKAN/"
-  url "https://github.com/KSP-CKAN/CKAN/releases/download/v1.6.23/ckan.exe", :using => :nounzip
-  version "1.6.23"
-  sha256 "6707f650b60d95f2a077012f0bcfffb8fef47b7607848d400b19d915907b143f"
+  url "https://github.com/KSP-CKAN/CKAN/releases/download/v1.8.3/ckan.exe", :using => :nounzip
+  version "1.8.3"
+  sha256 "70f58530a97d980a04ca88757e0f0d3acef7944dfd72e5f5c5de2de0ee8e33f9"
 
   bottle do
     root_url "https://homebrew.bintray.com/bottles-games"

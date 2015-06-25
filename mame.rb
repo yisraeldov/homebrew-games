@@ -1,8 +1,17 @@
 class Mame < Formula
+  desc "Multiple Arcade Machine Emulator"
   homepage "http://mamedev.org/"
-  url "https://github.com/mamedev/mame/archive/mame0162.tar.gz"
-  sha256 "97b5154177cf7fa862f72be0a5a1241d4560a44bc00c2ac1785f0ae706deb899"
-  version "0.162"
+  stable do
+    url "https://github.com/mamedev/mame/archive/mame0163.tar.gz"
+    version "0.163"
+    sha256 "6be1536f0c8470764aead9a32f8b5d9fd7979040b402ec337cb47f73deaa68b1"
+
+    # FIXME: only for clang build error on 0.163
+    patch do
+      url "https://github.com/mamedev/mame/commit/bc23c001b5dff4b271fc480c55d56785e9e3fa10.diff"
+      sha256 "0541c65a7354125d59303ada00b13f9754af4acf0844ac1145c3cb648cfb6cf7"
+    end
+  end
 
   head "https://github.com/mamedev/mame.git"
 

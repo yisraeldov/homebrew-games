@@ -11,8 +11,6 @@ class StoneSoup < Formula
     sha1 "9c9f1b441fb8972b65dc8d2d48db52ade96b9f3e" => :mountain_lion
   end
 
-  depends_on 'xz' => :build
-
   def install
     # Numerous template issues building under libc++
     ENV.libstdcxx

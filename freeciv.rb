@@ -4,7 +4,7 @@ class Freeciv < Formula
   url "https://downloads.sourceforge.net/project/freeciv/Freeciv%202.5/2.5.0/freeciv-2.5.0.tar.bz2"
   mirror "http://download.gna.org/freeciv/stable/freeciv-2.5.0.tar.bz2"
   sha256 "bd9f7523ea79b8d2806d0c1844a9f48506ccd18276330580319913c43051210b"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://homebrew.bintray.com/bottles-games"
@@ -38,12 +38,20 @@ class Freeciv < Formula
     depends_on "sdl_ttf"
   end
 
-  depends_on "gtk+3" => :recommended
+  depends_on "gtk+" => :recommended
+  depends_on "gtk+3" => :optional
+  if build.with?("gtk+") || build.with?("gtk+3")
+    depends_on "atk"
+    depends_on "glib"
+    depends_on "pango"
+  end
+  depends_on "gdk-pixbuf" if build.with? "gtk+3"
 
   def install
     args = %W[
       --disable-debug
       --disable-dependency-tracking
+      --disable-gtktest
       --prefix=#{prefix}
       --with-readline=#{Formula["readline"].opt_prefix}
     ]

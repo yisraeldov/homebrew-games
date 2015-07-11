@@ -1,20 +1,21 @@
 class Wesnoth < Formula
+  desc "Single- and multi-player turn-based strategy game"
   homepage "http://www.wesnoth.org/"
-  url "https://downloads.sourceforge.net/project/wesnoth/wesnoth-1.12/wesnoth-1.12.2/wesnoth-1.12.2.tar.bz2"
-  sha256 "1f4f76e5fd0ce175a3eb7b9855aff7a58dc75899c534d7653d97ac9fd4fe798b"
+  url "https://downloads.sourceforge.net/project/wesnoth/wesnoth-1.12/wesnoth-1.12.4/wesnoth-1.12.4.tar.bz2"
+  sha256 "bf525060da4201f1e62f861ed021f13175766e074a8a490b995052453df51ea7"
 
   head "https://github.com/wesnoth/wesnoth.git"
-
-  devel do
-    url "https://downloads.sourceforge.net/project/wesnoth/wesnoth/wesnoth-1.13.0/wesnoth-1.13.0.tar.bz2"
-    sha256 "68fc1f3e147c73b9eb3622a157e272d3f5f286acb3c5043dc1bfa7f7fb8cb912"
-  end
 
   bottle do
     root_url "https://homebrew.bintray.com/bottles-games"
     sha256 "6cceadef75e97dce80f23b6dd537117c22ad8c70c4fffc60b1f3bf626d7a78e4" => :yosemite
     sha256 "227f920fc3bfffd1ec97d73289516880fa6f3a041c809aca52a1a75a4caa7f9f" => :mavericks
     sha256 "788803a5d90371e3e622f9469014062a520ea7e3e2bb0e9573ce1192baf53744" => :mountain_lion
+  end
+
+  devel do
+    url "https://downloads.sourceforge.net/project/wesnoth/wesnoth/wesnoth-1.13.1/wesnoth-1.13.1.tar.bz2"
+    sha256 "4423645f58eae3a22cdb94736a20181fbb3c2de3de36e20a70084b15b20337f2"
   end
 
   option "with-ccache", "Speeds recompilation, convenient for beta testers"

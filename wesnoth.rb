@@ -7,10 +7,9 @@ class Wesnoth < Formula
   head "https://github.com/wesnoth/wesnoth.git"
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-games"
-    sha256 "6cceadef75e97dce80f23b6dd537117c22ad8c70c4fffc60b1f3bf626d7a78e4" => :yosemite
-    sha256 "227f920fc3bfffd1ec97d73289516880fa6f3a041c809aca52a1a75a4caa7f9f" => :mavericks
-    sha256 "788803a5d90371e3e622f9469014062a520ea7e3e2bb0e9573ce1192baf53744" => :mountain_lion
+    sha256 "63250b3eefb3ff93eba14addee9acfb6980ba138b9033b824a14f5e2a3a5a4b0" => :yosemite
+    sha256 "93e971f838ba9c2bf97974dc3ef7d6823138bdda560671d67cf74794d65c4f30" => :mavericks
+    sha256 "dcbc0e81cd0a5c92392b51b1e68f933045277bf75eeddebaa3b99797c45ce6be" => :mountain_lion
   end
 
   devel do

@@ -5,11 +5,10 @@ class Openclonk < Formula
   sha256 "4e2e6cefedd4a13523593b285af23b530caa3a98ff02ac4adb215cf32889cb94"
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-games"
     cellar :any
-    sha256 "3e61a12dca0998d1c0a78466569abb325c32a26549034b1569cb187f479082d0" => :yosemite
-    sha256 "76e83695bfa80b4387004961a6693d555993a4a603cdcd386908edfbd195592a" => :mavericks
-    sha256 "f31c5f4100c5bd8ab22ca8d25dbf52df5b40ffbaed1567f1cb325547fcafcf2a" => :mountain_lion
+    sha256 "bab95c703bf739aa824087a2d7e74e6cb2ba39820d5579b4b844b278ed2ce312" => :yosemite
+    sha256 "78db1e1d29ff023e2bdf2c9a1e1cbee9793664c4ec42f9a6c2f017580c7a5ceb" => :mavericks
+    sha256 "522ebcef7cc4a6597f7593b976827b0409612f483e48df4876294e0de40a8119" => :mountain_lion
   end
 
   depends_on :macos => :mountain_lion

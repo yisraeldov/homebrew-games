@@ -1,8 +1,7 @@
 class Angband < Formula
   homepage "http://rephial.org/"
-  url "http://rephial.org/downloads/3.5/angband-v3.5.1.tar.gz"
-  mirror "https://mirrors.kernel.org/debian/pool/main/a/angband/angband_3.5.1.orig.tar.gz"
-  sha256 "c5ca3ab75fd820a49eb2b9ab8b1c2a811ff992276f9800cc61c686e90bd4d447"
+  url "http://rephial.org/downloads/4.0/angband-4.0.1.tar.gz"
+  sha256 "f65814a521960e05a0b1cb0badbefb7b229530fd74616ed3a23fb898faa528d0"
 
   bottle do
     root_url "https://homebrew.bintray.com/bottles-games"

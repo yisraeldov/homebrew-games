@@ -4,10 +4,9 @@ class Angband < Formula
   sha256 "f65814a521960e05a0b1cb0badbefb7b229530fd74616ed3a23fb898faa528d0"
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-games"
-    sha256 "0ddb3329005ec7acda583248b4ce59cad057fd4cb642942000035695c1c76daa" => :yosemite
-    sha256 "2abb9acb242fcf925ec62cc818d7577261d6f7b9df2d505173da6bb4b47148d7" => :mavericks
-    sha256 "930a2861f6faac4d8756f64d2340cbafda08129ee9d28e507962cca5afbf7697" => :mountain_lion
+    sha256 "ece28191291c732d1a9c77f52154d0a7a1ac9b6a64cacafd56ed226e8411178a" => :yosemite
+    sha256 "4dfdf04dcdad019c47c12239a60e3d75ef72968c37dd8de5ccd8f4d59d0f26db" => :mavericks
+    sha256 "4169c9197bc346c86e170406afb893ebf1efbed914152edb0890bfbd108ddb84" => :mountain_lion
   end
 
   head do

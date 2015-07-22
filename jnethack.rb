@@ -1,5 +1,4 @@
-require 'formula'
-require 'etc'
+require "etc"
 
 # Nethack the way God intended it to be played: from a terminal.
 
@@ -7,22 +6,24 @@ require 'etc'
 # The patches in DATA section are shamelessly stolen from MacPorts' jnethack portfile.
 
 class Jnethack < Formula
-  url 'https://downloads.sourceforge.net/project/nethack/nethack/3.4.3/nethack-343-src.tgz'
-  homepage 'http://jnethack.sourceforge.jp/'
-  version '3.4.3-0.11'
-  sha1 'c26537093c38152bc0fbcec20468d975b35f59fd'
+  url "https://downloads.sourceforge.net/project/nethack/nethack/3.4.3/nethack-343-src.tgz"
+  homepage "http://jnethack.sourceforge.jp/"
+  version "3.4.3-0.11"
+  sha256 "bb39c3d2a9ee2df4a0c8fdde708fbc63740853a7608d2f4c560b488124866fe4"
 
-  fails_with_llvm :build => 2334
+  fails_with :llvm do
+    build 2334
+  end
 
   # needs X11 locale for i18n
   depends_on :x11
 
   # Don't remove save folder
-  skip_clean 'libexec/save'
+  skip_clean "libexec/save"
 
   patch do
     url "http://iij.dl.sourceforge.jp/jnethack/58545/jnethack-3.4.3-0.11.diff.gz"
-    sha1 "ee138602035c0f5587a24b2567135c836ad65395"
+    sha256 "fbc071f6b33c53d89e8f13319ced952e605499a21d2086077296c631caff7389"
   end
 
   patch :DATA
@@ -31,10 +32,10 @@ class Jnethack < Formula
     # Build everything in-order; no multi builds.
     ENV.deparallelize
 
-    ENV['HOMEBREW_CFLAGS'] = ENV.cflags
+    ENV["HOMEBREW_CFLAGS"] = ENV.cflags
 
     # Symlink makefiles
-    system 'sh sys/unix/setup.sh'
+    system "sh", "sys/unix/setup.sh"
 
     inreplace "include/config.h",
       /^#\s*define HACKDIR.*$/,
@@ -51,17 +52,17 @@ class Jnethack < Formula
       /^#\s*define\s+WIZARD_NAME\s+"wizard"/,
       "#define WIZARD_NAME \"#{wizard}\""
 
-    cd 'dat' do
+    cd "dat" do
       system "make"
 
-      %w(perm logfile).each do |f|
-        system "touch", f
+      %w[perm logfile].each do |f|
+        touch f
         libexec.install f
       end
 
       # Stage the data
-      libexec.install %w(jhelp jhh jcmdhelp jhistory jopthelp jwizhelp dungeon license data jdata.base joracles options jrumors.tru jrumors.fal quest.dat jquest.txt)
-      libexec.install Dir['*.lev']
+      libexec.install %w[jhelp jhh jcmdhelp jhistory jopthelp jwizhelp dungeon license data jdata.base joracles options jrumors.tru jrumors.fal quest.dat jquest.txt]
+      libexec.install Dir["*.lev"]
     end
 
     # Make the game
@@ -70,8 +71,8 @@ class Jnethack < Formula
       system "make"
     end
 
-    bin.install 'src/jnethack'
-    (libexec+'save').mkpath
+    bin.install "src/jnethack"
+    (libexec+"save").mkpath
   end
 end
 

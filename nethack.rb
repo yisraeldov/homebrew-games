@@ -1,5 +1,4 @@
-require 'formula'
-require 'etc'
+require "etc"
 
 # Nethack the way God intended it to be played: from a terminal.
 # This build script was created referencing:
@@ -13,15 +12,17 @@ require 'etc'
 # - @adamv
 
 class Nethack < Formula
-  homepage 'http://www.nethack.org/index.html'
-  url 'https://downloads.sourceforge.net/project/nethack/nethack/3.4.3/nethack-343-src.tgz'
-  version '3.4.3'
-  sha1 'c26537093c38152bc0fbcec20468d975b35f59fd'
+  homepage "http://www.nethack.org/index.html"
+  url "https://downloads.sourceforge.net/project/nethack/nethack/3.4.3/nethack-343-src.tgz"
+  version "3.4.3"
+  sha256 "bb39c3d2a9ee2df4a0c8fdde708fbc63740853a7608d2f4c560b488124866fe4"
 
-  fails_with_llvm :build => 2334
+  fails_with :llvm do
+    build 2334
+  end
 
   # Don't remove save folder
-  skip_clean 'libexec/save'
+  skip_clean "libexec/save"
 
   patch :DATA
 
@@ -30,7 +31,7 @@ class Nethack < Formula
     ENV.deparallelize
 
     # Symlink makefiles
-    system 'sh sys/unix/setup.sh'
+    system "sh", "sys/unix/setup.sh"
 
     inreplace "include/config.h",
       /^#\s*define HACKDIR.*$/,
@@ -47,30 +48,31 @@ class Nethack < Formula
       /^#\s*define\s+WIZARD_NAME\s+"wizard"/,
       "#define WIZARD_NAME \"#{wizard}\""
 
-    # Make the data first, before we munge the CFLAGS
-    system "cd dat;make"
-
-    cd 'dat' do
-      %w(perm logfile).each do |f|
-        system "touch", f
+    cd "dat" do
+      # Make the data first, before we munge the CFLAGS
+      system "make"
+      %w[perm logfile].each do |f|
+        touch f
         libexec.install f
       end
 
       # Stage the data
-      libexec.install %w(help hh cmdhelp history opthelp wizhelp dungeon license data oracles options rumors quest.dat)
-      libexec.install Dir['*.lev']
+      libexec.install %w[help hh cmdhelp history opthelp wizhelp dungeon license data oracles options rumors quest.dat]
+      libexec.install Dir["*.lev"]
     end
 
     # Make the game
     ENV.append_to_cflags "-I../include"
-    system 'cd src;make'
+    cd "src" do
+      system "make"
+    end
 
-    bin.install 'src/nethack'
-    (libexec+'save').mkpath
+    bin.install "src/nethack"
+    (libexec+"save").mkpath
 
     # These need to be group-writable in multi-user situations
-    system "chmod", "g+w", libexec
-    system "chmod", "g+w", libexec+'save'
+    chmod "g+w", libexec
+    chmod "g+w", libexec+"save"
   end
 end
 

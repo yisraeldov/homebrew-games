@@ -1,22 +1,20 @@
-require 'formula'
-
 class Einstein < Formula
-  homepage 'http://web.archive.org/web/20120621005109/http://games.flowix.com/en/index.html'
-  url 'http://web.archive.org/web/20120621005109/http://games.flowix.com/files/einstein/einstein-2.0-src.tar.gz'
-  sha1 '866a9a1c115014d7f6a241bc22b251907f63f8bc'
+  homepage "http://web.archive.org/web/20120621005109/http://games.flowix.com/en/index.html"
+  url "http://web.archive.org/web/20120621005109/http://games.flowix.com/files/einstein/einstein-2.0-src.tar.gz"
+  sha256 "0f2d1c7d46d36f27a856b98cd4bbb95813970c8e803444772be7bd9bec45a548"
 
-  depends_on 'sdl'
-  depends_on 'sdl_ttf'
-  depends_on 'sdl_mixer'
+  depends_on "sdl"
+  depends_on "sdl_ttf"
+  depends_on "sdl_mixer"
 
   # Fixes a cast error on compilation
-  patch :p0, DATA
+  patch :p0, :DATA
 
   def install
-    system 'make'
+    system "make"
 
-    bin.install 'einstein'
-    (share/'einstein/res').install 'einstein.res'
+    bin.install "einstein"
+    (share/"einstein/res").install "einstein.res"
   end
 end
 

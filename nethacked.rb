@@ -1,4 +1,4 @@
-require 'etc'
+require "etc"
 
 # Bugfixed and interface-patched Nethack.
 #
@@ -19,14 +19,16 @@ require 'etc'
 # - @adamv
 
 class Nethacked < Formula
-  homepage 'https://nethacked.github.io/'
-  url 'https://github.com/nethacked/nethacked/archive/1.0.tar.gz'
-  sha1 'c30af9be9846616683f669ff6d898fa765bec8cf'
+  homepage "https://nethacked.github.io/"
+  url "https://github.com/nethacked/nethacked/archive/1.0.tar.gz"
+  sha256 "4e3065a7b652d5fc21577e0b7ac3a60513cd30f4ee81c7f11431a71185b609aa"
 
-  fails_with_llvm :build => 2334
+  fails_with :llvm do
+    build 2334
+  end
 
   # Don't remove save folder
-  skip_clean 'libexec/save'
+  skip_clean "libexec/save"
 
   patch :DATA
 
@@ -35,7 +37,7 @@ class Nethacked < Formula
     ENV.deparallelize
 
     # Symlink makefiles
-    system 'sh sys/unix/setup.sh'
+    system "sh", "sys/unix/setup.sh"
 
     inreplace "include/config.h",
       /^#\s*define HACKDIR.*$/,
@@ -52,30 +54,31 @@ class Nethacked < Formula
       /^#\s*define\s+WIZARD_NAME\s+"wizard"/,
       "#define WIZARD_NAME \"#{wizard}\""
 
-    # Make the data first, before we munge the CFLAGS
-    system "cd dat;make"
-
-    cd 'dat' do
-      %w(perm logfile).each do |f|
-        system "touch", f
+    cd "dat" do
+      # Make the data first, before we munge the CFLAGS
+      system "make"
+      %w[perm logfile].each do |f|
+        touch f
         libexec.install f
       end
 
       # Stage the data
-      libexec.install %w(help hh cmdhelp history opthelp wizhelp dungeon license data oracles options rumors quest.dat)
-      libexec.install Dir['*.lev']
+      libexec.install %w[help hh cmdhelp history opthelp wizhelp dungeon license data oracles options rumors quest.dat]
+      libexec.install Dir["*.lev"]
     end
 
     # Make the game
     ENV.append_to_cflags "-I../include"
-    system 'cd src;make'
+    cd "src" do
+      system "make"
+    end
 
-    bin.install 'src/nethacked'
-    (libexec+'save').mkpath
+    bin.install "src/nethacked"
+    (libexec+"save").mkpath
 
     # These need to be group-writable in multi-user situations
-    system "chmod", "g+w", libexec
-    system "chmod", "g+w", libexec+'save'
+    chmod "g+w", libexec
+    chmod "g+w", libexec+"save"
   end
 end
 

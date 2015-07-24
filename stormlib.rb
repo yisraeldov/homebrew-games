@@ -6,7 +6,6 @@ class Stormlib < Formula
   head "https://github.com/ladislav-zezula/StormLib.git"
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-games"
     cellar :any
     sha256 "21dc183f56bd9652902191f6926a2742941434d8857c6647a4e1f0ddfef83a0a" => :yosemite
     sha256 "c3c8c3ac7ac27f8ab04a33d56cabc8f2c6b30f30d23099c0fd45b1068e952021" => :mavericks

@@ -1,7 +1,6 @@
 class Ski < Formula
   url "http://www.catb.org/~esr/ski/ski-6.9.tar.gz"
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-games"
     cellar :any
     sha256 "b0ade43d5fc9f2cf1daeddef39b20db8b99501325f8d95fd5737cf848d672d76" => :yosemite
     sha256 "776cb7cf4cd96e64426121362702f00b6ec4766a14f224b125b21e56d90f530c" => :mavericks

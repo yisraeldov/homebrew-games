@@ -16,7 +16,6 @@ class Mame < Formula
   head "https://github.com/mamedev/mame.git"
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-games"
     cellar :any
     sha256 "539179c770ae68e337538453a8904e1a81e1c68b13c0c15169f741f7b677b84b" => :yosemite
     sha256 "c0458449dc41dd5eaf696420b862654d680e20d846ac17282dd93123cf2e19d7" => :mavericks

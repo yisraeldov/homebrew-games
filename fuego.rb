@@ -4,7 +4,6 @@ class Fuego < Formula
   version "1.1.SVN"
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-games"
     sha1 "baada923a390e85d861e17f52ef5828a7b46507d" => :yosemite
     sha1 "de717af5d96a517ece0f7567ce5c20f270a53790" => :mavericks
     sha1 "cb3d147498cf47304dbffb7b3c68c66c9ac6b69c" => :mountain_lion

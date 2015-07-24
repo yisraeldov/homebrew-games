@@ -4,7 +4,6 @@ class Bastet < Formula
   sha256 "c47a84fb17c2895ea7a85b72ea40a154a03c1114c178ea7fee341215153afcdc"
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-games"
     cellar :any
     sha256 "2b8b98b85c99146690f363dc780d946c8fe8cecfb838ab3fb0dbad8614b83bc5" => :yosemite
     sha256 "c246613779b82dac07649d5d53b846f38ffababa8d7ec40e405e0cc91a046686" => :mavericks

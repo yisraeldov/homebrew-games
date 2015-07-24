@@ -4,7 +4,6 @@ class Mupen64plus < Formula
   sha256 "9c75b9d826f2d24666175f723a97369b3a6ee159b307f7cc876bbb4facdbba66"
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-games"
     cellar :any
     sha256 "fcc0f6c7b4b125d5d00eaf22870aaa1315900913007703baab07848e71fd7b36" => :yosemite
     sha256 "a2535a29684c1cc94f16fac22ad209490b9b8319f7bfa189c81d716ee206e51a" => :mavericks

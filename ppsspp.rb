@@ -4,7 +4,6 @@ class Ppsspp < Formula
   head "https://github.com/hrydgard/ppsspp.git"
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-games"
     cellar :any
     sha1 "9ec048258882fb2ea2f71661f6ccf4bcd4373ff6" => :yosemite
     sha1 "cfd18d4a6a6d2e07daa74d6a626d9614c6f201c3" => :mavericks

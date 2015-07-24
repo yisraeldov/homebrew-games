@@ -6,7 +6,6 @@ class EmsFlasher < Formula
   head "git://lacklustre.net/ems-flasher"
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-games"
     cellar :any
     sha256 "3e48e32d5c881d2c4f5f6bd8d5f454f22d7f174da04a62ba141cc4f5403b9cf5" => :yosemite
     sha256 "a8eb1537eab2d24537afbf4ab3f27e0514214f84fabdb77415c096bd04147318" => :mavericks

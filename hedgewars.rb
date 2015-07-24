@@ -17,7 +17,6 @@ class Hedgewars < Formula
     end
   end
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-games"
     cellar :any
     sha256 "ecfa4fdcf61d7092808eaa3ea9d55548d2bdb3d3c92d16f429d009a66477b720" => :yosemite
     sha256 "e26fe494b20c8bbaf4b7ddc938e22c5be21a938411cce30f4fd822bd355d4c06" => :mavericks

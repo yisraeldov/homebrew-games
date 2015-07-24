@@ -5,7 +5,6 @@ class Residualvm < Formula
   head "https://github.com/residualvm/residualvm.git"
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-games"
     sha1 "564a86dacaad4f809686f111ea7ca9fc342ccf39" => :yosemite
     sha1 "2037f7546c6f07b663b0433fed05c1190ec0a519" => :mavericks
     sha1 "493c255b9e041085624e3e2570f7cbe29547654b" => :mountain_lion

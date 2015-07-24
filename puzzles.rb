@@ -8,7 +8,6 @@ class Puzzles < Formula
   head "git://git.tartarus.org/simon/puzzles.git"
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-games"
     cellar :any
     sha256 "c81998464a7c05a2b0c8388d2719b02f22874bf14b83b61c947fbac1d9dfd23d" => :yosemite
     sha256 "d0ef8a9ea7b3a395557d20c64ef0e7301c8fd62caca5f9e5084f4fb9542dd439" => :mavericks

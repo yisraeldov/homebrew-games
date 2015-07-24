@@ -4,7 +4,6 @@ class Snescom < Formula
   sha256 "e80187d969fd448fe4d3c636bdbe9c24fe452e1436566b29fbf3410bde739504"
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-games"
     cellar :any
     sha256 "102cfb6d03ac2dede67119f47329a1db8436f001946ef36c285b7bb3463dafa3" => :yosemite
     sha256 "2ef1408312be3110c88e5be2f9e7b736a8d498ade8335b5076da09585ebff971" => :mavericks

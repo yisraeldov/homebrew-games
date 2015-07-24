@@ -7,7 +7,6 @@ class Freeciv < Formula
   revision 2
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-games"
     sha256 "5a74cd6f37b5658e492039eb83cc1955e0d653864571433320043f75954a75d4" => :yosemite
     sha256 "d21792836f4e56e2a23db4e5b7c051530221890969a6217a60b22b4012758cf7" => :mavericks
     sha256 "a08453b6a23c4798e8fed7cbad424c581ed8b890509254abd5778ead4d7b58de" => :mountain_lion

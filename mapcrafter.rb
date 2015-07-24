@@ -4,7 +4,6 @@ class Mapcrafter < Formula
   sha1 "ffe7d17a57099506b572bb6866ea76c8ad5f0564"
 
   bottle do
-    root_url "https://downloads.sf.net/project/machomebrew/Bottles/games"
     cellar :any
     sha1 "ac8fd25b80cb3afda8e6efbdbea1a6d09a010771" => :yosemite
     sha1 "23a458a7763f44d020ff5a5ef97152455573c607" => :mavericks

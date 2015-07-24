@@ -6,7 +6,6 @@ class Fceux < Formula
   revision 2
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-games"
     cellar :any
     sha256 "5a2fc373529149ab867256b5b8ba6e00520ff2d2e54b88a5c8ddeacb12f1644b" => :yosemite
     sha256 "9348e088694ad88dff6a013b04e62acb9ab4290898c038b8317e792de46e4d0f" => :mavericks

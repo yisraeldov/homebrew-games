@@ -5,7 +5,6 @@ class Xboard < Formula
   sha256 "7fd0b03f53dad57c587bc3438459612e2455534f715cfb0e637b6290f34cbeaa"
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-games"
     sha256 "b01bdebeec0ca39e2d34acf08a210e4c22843f7b541a1a04d5a777dff95341de" => :yosemite
     sha256 "ababbd0b0d60bf6571cfe8b7e18e620dc654b8a82d22bd877b850c00a93851c4" => :mavericks
     sha256 "68355a1ab17eeaf7d1efb0c3bcdeaefe5ac754f2b33908bb9771fb88b3f2d80b" => :mountain_lion

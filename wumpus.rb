@@ -4,7 +4,6 @@ class Wumpus < Formula
   sha256 "965e49b3e53f44023994b42b3aa568ad79d3a2287bb0a07460b601500c9ae16d"
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-games"
     cellar :any
     sha256 "d3b2684fa7a1a7a9c676bc0f7d635ed3913f6734c7810f0c6fa234044ca9a147" => :yosemite
     sha256 "cb277b7dab8ca78ea627f80a9596807b7cd5e8bbba389d0117b4a743bdfdaacf" => :mavericks

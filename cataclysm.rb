@@ -7,7 +7,6 @@ class Cataclysm < Formula
   head "https://github.com/CleverRaven/Cataclysm-DDA.git"
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-games"
     cellar :any
     sha256 "d238e5fa398e9dba4b807108a5885025185f91269128b47690ce8422c7cd6d44" => :yosemite
     sha256 "2d8ab27ec069acecb344bfa2ab57f346352650de1877767dcb220af7129ae879" => :mavericks

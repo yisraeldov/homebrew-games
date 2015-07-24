@@ -7,7 +7,6 @@ class Abuse < Formula
   sha1 '12fea968a1494338ad71c6ec24954f3eef56826a'
 
   bottle do
-    root_url "https://downloads.sf.net/project/machomebrew/Bottles/games"
     cellar :any
     sha1 "4b1251c34a1be43af54c818f5a256ae71447fb88" => :yosemite
     sha1 "240f522bbebf0d60612f0244a5808c821b6e28d0" => :mavericks

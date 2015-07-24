@@ -7,7 +7,6 @@ class Stockfish < Formula
   head "https://github.com/official-stockfish/Stockfish.git"
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-games"
     cellar :any
     sha256 "622bacb36395cb7ccdb83510c354292d954aa655201fdc506185de99b18de75d" => :yosemite
     sha256 "f02a0eaa017869d57cdb713ab8e20c70122ed17fa60f8add1f2db1933b843ec2" => :mavericks

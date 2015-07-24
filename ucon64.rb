@@ -5,7 +5,6 @@ class Ucon64 < Formula
   sha256 "62064324a1912387f84ac9d4c521c5d5e7b80f2567e9f61bf0ab3e1d976c0127"
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-games"
     sha256 "506f4a137c9afe2237eabbe56b019f6273ea8fefeae42b5587c15cf3a9ac0576" => :yosemite
     sha256 "e437363bcc306c62c4cac284423f9dbdb21363bcb53faf7db71b6dbf64043341" => :mavericks
     sha256 "435790895fbe1cb663963ae6c9a872e24691085f423acdc9ed9f439634cf7f54" => :mountain_lion

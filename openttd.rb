@@ -1,7 +1,7 @@
 class Openttd < Formula
   homepage "https://www.openttd.org/"
-  url "https://binaries.openttd.org/releases/1.5.0/openttd-1.5.0-source.tar.xz"
-  sha256 "cb2735c3c94709430c58eb4e8820cd5d26b1a17447c34ca8792bb3432a3f7c2d"
+  url "https://binaries.openttd.org/releases/1.5.1/openttd-1.5.1-source.tar.xz"
+  sha256 "c98e76e57de213c8d2ccafa4fa2e02b91c031b2487639ccf9b85c725c1428f49"
 
   head "git://git.openttd.org/openttd/trunk.git"
 

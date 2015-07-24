@@ -6,10 +6,9 @@ class Openttd < Formula
   head "git://git.openttd.org/openttd/trunk.git"
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-games"
-    sha256 "bf9d0c015c423c12ce937f09e69f435f8d46446735b665c333af874a09299a55" => :yosemite
-    sha256 "2114a0425310d168ee2d93cb55e25364765c4c532be99a2c99ebbe9b5c7f2a81" => :mavericks
-    sha256 "fb2541820550c54dcebdac93addfe07c84eb9c2c9069d3b97a5b57677483dfff" => :mountain_lion
+    sha256 "dba77231d9a1b4034d3310afea8ea20f42888509673e2ea611024263b3c11e8b" => :yosemite
+    sha256 "2d5fd44fa7461aa73bc9e9f390656f648070e16c53c4d64009410e438ad0915f" => :mavericks
+    sha256 "addd02b6050fb3422021d39a08f9075572e79106e863e01a22114af90ea9d13c" => :mountain_lion
   end
 
   depends_on "lzo"

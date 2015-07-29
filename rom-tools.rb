@@ -1,19 +1,10 @@
 class RomTools < Formula
   desc "Tools for Multiple Arcade Machine Emulator"
   homepage "http://mamedev.org/"
-  url "https://github.com/mamedev/mame/archive/mame0163.tar.gz"
-  version "0.163"
-  sha256 "6be1536f0c8470764aead9a32f8b5d9fd7979040b402ec337cb47f73deaa68b1"
-
+  url "https://github.com/mamedev/mame/archive/mame0164.tar.gz"
+  version "0.164"
+  sha256 "01e9b3c03c7a379a0aecea50415c9ba687d8f0af282a8447027d02d279055a81"
   head "https://github.com/mamedev/mame.git"
-
-  # FIXME: only for clang build error on 0.163
-  stable do
-    patch do
-      url "https://github.com/mamedev/mame/commit/bc23c001b5dff4b271fc480c55d56785e9e3fa10.diff"
-      sha256 "0541c65a7354125d59303ada00b13f9754af4acf0844ac1145c3cb648cfb6cf7"
-    end
-  end
 
   bottle do
     cellar :any

@@ -6,6 +6,12 @@ class Cockatrice < Formula
   sha256 "2e9bdd48e196b8b4976e9de8f486044ac4517abe824edc1e8eb3bbb4ba3e9820"
   head "https://github.com/Cockatrice/Cockatrice.git"
 
+  bottle do
+    sha256 "5b891aa84f283c040c35f7c6983df37574547e52f0904065eb292eac607201e0" => :yosemite
+    sha256 "8e765815083b7141646aaa5cc44291fb073588c4d64d53d4e2bcdd26c68c9458" => :mavericks
+    sha256 "afd9d7b666316fd31708fdd7d2af41e7fc4d42856509aae9bdc6571a5dcb7fd9" => :mountain_lion
+  end
+
   option "with-server", "Build `servatrice` for running game servers"
 
   depends_on "cmake" => :build

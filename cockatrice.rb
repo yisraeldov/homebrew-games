@@ -1,9 +1,9 @@
 class Cockatrice < Formula
   desc "Virtual tabletop for multiplayer card games"
   homepage "https://github.com/Cockatrice/Cockatrice"
-  url "https://github.com/Cockatrice/Cockatrice/archive/2015-07-15-Release.tar.gz"
-  version "2015-07-15"
-  sha256 "2e9bdd48e196b8b4976e9de8f486044ac4517abe824edc1e8eb3bbb4ba3e9820"
+  url "https://github.com/Cockatrice/Cockatrice/archive/2015-08-09-Release.tar.gz"
+  version "2015-08-09"
+  sha256 "49d6c3b13872b155b58b1375bc0f75cd4619a66bc5903cea21fe22c64a3f6407"
   head "https://github.com/Cockatrice/Cockatrice.git"
 
   bottle do
@@ -17,16 +17,16 @@ class Cockatrice < Formula
   depends_on "cmake" => :build
   depends_on "protobuf"
 
-  fails_with :clang do
-    build 503
-    cause "Undefined symbols for architecture x86_64: google::protobuf"
-  end
-
   if build.with? "server"
     depends_on "libgcrypt"
     depends_on "qt5" => "with-mysql"
   else
     depends_on "qt5"
+  end
+
+  fails_with :clang do
+    build 503
+    cause "Undefined symbols for architecture x86_64: google::protobuf"
   end
 
   def install

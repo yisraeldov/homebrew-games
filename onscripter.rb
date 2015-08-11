@@ -4,6 +4,13 @@ class Onscripter < Formula
   url "https://onscripter.osdn.jp/onscripter-20150208.tar.gz"
   sha256 "b123fb56419d659c24e29e8bfab6fe184f1059581beeb2b5b5c2acd47c269d2d"
 
+  bottle do
+    cellar :any
+    sha256 "e0bc27dafa4d5b4709557d0e1e5c585509345891a888b76745c6372359bd26f8" => :yosemite
+    sha256 "749b12653ac15598c6789fbea8791615e0831a71c05bf8baa1ac75a85bae8425" => :mavericks
+    sha256 "788dcb565c0bf497cc8c66425172075ec0ff7217cbc7f0f3fb8562305a8914c1" => :mountain_lion
+  end
+
   option "with-english", "Build with single-byte character mode"
 
   depends_on "pkg-config" => :build

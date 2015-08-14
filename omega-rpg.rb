@@ -3,6 +3,7 @@ class OmegaRpg < Formula
   homepage "http://www.alcyone.com/max/projects/omega/"
   url "http://www.alcyone.com/binaries/omega/omega-0.80.2-src.tar.gz"
   sha256 "60164319de90b8b5cae14f2133a080d5273e5de3d11c39df080a22bbb2886104"
+  revision 1
 
   bottle do
     sha256 "1c0b199b608f8f3e4544243743049ffd334d26680cc372adf1c9c4aeb0420f55" => :yosemite
@@ -28,5 +29,10 @@ class OmegaRpg < Formula
     # 'make install' is weird, so we do it ourselves
     bin.install "omega"
     libexec.install Dir["omegalib/*"]
+  end
+
+  def post_install
+    # omega refuses to run without license.txt in OMEGALIB
+    ln_s prefix/"license.txt", libexec/"license.txt"
   end
 end

@@ -5,9 +5,9 @@ class Xboard < Formula
   sha256 "c88f48fc7fe067be0a13b8d121c38551145f889719c212717884e5e82d902d17"
 
   bottle do
-    sha256 "b01bdebeec0ca39e2d34acf08a210e4c22843f7b541a1a04d5a777dff95341de" => :yosemite
-    sha256 "ababbd0b0d60bf6571cfe8b7e18e620dc654b8a82d22bd877b850c00a93851c4" => :mavericks
-    sha256 "68355a1ab17eeaf7d1efb0c3bcdeaefe5ac754f2b33908bb9771fb88b3f2d80b" => :mountain_lion
+    sha256 "962538e8ccc89f02b43c29747864591b0bf2a97087addb5ee9695acf262bba6b" => :yosemite
+    sha256 "ddfcc515d630a777c1512df1f29189eb9e0c7f47246d42b1f5ba8b8614fbe81b" => :mavericks
+    sha256 "67f9d1b523f0d387f91e92ee9874ff14e5cf7cb3e8e5473bac7353567e471cde" => :mountain_lion
   end
 
   depends_on "pkg-config" => :build

@@ -6,9 +6,10 @@ class Residualvm < Formula
   head "https://github.com/residualvm/residualvm.git"
 
   bottle do
-    sha1 "564a86dacaad4f809686f111ea7ca9fc342ccf39" => :yosemite
-    sha1 "2037f7546c6f07b663b0433fed05c1190ec0a519" => :mavericks
-    sha1 "493c255b9e041085624e3e2570f7cbe29547654b" => :mountain_lion
+    revision 1
+    sha256 "ae156d7f7507a6469fa6538d5e0adc056baaf97341ed3a913c4bd0c8d518ba25" => :yosemite
+    sha256 "f42ea636d726f4c74066634d4b198296861beb62a8476f14e459168d25ea8b24" => :mavericks
+    sha256 "88e0730c81f130ed196de58ab791610f7219837797a343b1ed736ace0235f25b" => :mountain_lion
   end
 
   option "with-all-engines", "Enable all engines (including broken or unsupported)"

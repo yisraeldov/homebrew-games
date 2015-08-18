@@ -5,6 +5,12 @@ class Scummvm < Formula
   sha256 "d9ff0e8cf911afa466d5456d28fef692a17d47ddecfd428bf2fef591237c2e66"
   head "https://github.com/scummvm/scummvm.git"
 
+  bottle do
+    sha256 "20b37ba4b2833f9d1410229d70478878f685e4fac066edcde4596aa89cdce91d" => :yosemite
+    sha256 "00b1d3d1f999a431d27b452c8d85763801b68845d25577288723b4e15f94a0de" => :mavericks
+    sha256 "d7b6bf9e056151d493c0949e94adc662e572d4aaeb215bc2078b6e3a0e485b5c" => :mountain_lion
+  end
+
   option "with-all-engines", "Enable all engines (including broken or unsupported)"
 
   depends_on "sdl"

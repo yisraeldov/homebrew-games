@@ -3,6 +3,13 @@ class Np2 < Formula
   homepage "http://www.yui.ne.jp/np2/"
   url "http://amethyst.yui.ne.jp/svn/pc98/np2/tags/VER_0_84/", :using => :svn, :revision => "1735"
   sha256 "c21130b82dc1cd946c657598726d113891739343100aa63b3a15d9fb9e23eb68"
+  bottle do
+    cellar :any
+    sha256 "79a012d83dfbeda5cc093e2556c93d6492acc5aebbf97da7119009ff024e4513" => :yosemite
+    sha256 "07dd43fc72d3268d451861f44d05bd4786dda23e3bd81054aa54231afbd93017" => :mavericks
+    sha256 "c45a27bbb88896776406f03b6d83192fa8c567f8506358b36e562ab0c0dfc8d9" => :mountain_lion
+  end
+
   head "http://amethyst.yui.ne.jp/svn/pc98/np2/trunk/", :using => :svn
 
   depends_on :xcode => :build

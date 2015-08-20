@@ -4,6 +4,12 @@ class Xmoto < Formula
   url "http://download.tuxfamily.org/xmoto/xmoto/0.5.11/xmoto-0.5.11-src.tar.gz"
   sha256 "a584a6f9292b184686b72c78f16de4b82d5c5b72ad89e41912ff50d03eca26b2"
 
+  bottle do
+    sha256 "f751fa27d90c7102d8eec837b168100c0d9e9d5679d098ed73bc3f881d688c51" => :yosemite
+    sha256 "a6fc076cd3a531df53d98b22363d1baf919913ccf0c1453dc0afe1d501b8e44f" => :mavericks
+    sha256 "6accb5053b91e580203699b5227717d00cf73658600ae087f0388603568ba2bb" => :mountain_lion
+  end
+
   head do
     url "svn://svn.tuxfamily.org/svnroot/xmoto/xmoto/trunk"
     depends_on "automake" => :build

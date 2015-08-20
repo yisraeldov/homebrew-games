@@ -5,6 +5,13 @@ class Liblcf < Formula
   sha256 "c99bdc51badb1b644b7a24fcb3e19b209d75e9d9d3051bbd4fc6ef0114e7c63f"
   head "https://github.com/EasyRPG/liblcf.git"
 
+  bottle do
+    cellar :any
+    sha256 "b4ff1ddc14bd61dac7cce6ff3a095de6ff7c961a9df0c4749dd9a5cb53b35497" => :yosemite
+    sha256 "975940b97e4c6ced79df8431b97f00d0a945fd4651fa4b64108f36e8b5573540" => :mavericks
+    sha256 "2426801bc9bff3cf5cf4d8003a527c4864d08798a1f526444e4ad9dd23d664c6" => :mountain_lion
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build

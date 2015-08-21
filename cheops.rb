@@ -1,14 +1,19 @@
-require 'formula'
-
 class Cheops < Formula
-  homepage 'http://en.nothingisreal.com/wiki/CHEOPS'
-  url 'http://files.nothingisreal.com/software/cheops/cheops-1.1.tar.bz2'
-  sha1 'c2d2fd271134ca12cacf31ccd95aa5bce4c279b8'
+  desc "CHEss OPponent Simulator"
+  homepage "http://en.nothingisreal.com/wiki/CHEOPS"
+  url "http://files.nothingisreal.com/software/cheops/cheops-1.2.tar.bz2"
+  sha256 "60aabc9f193d62028424de052c0618bb19ee2ccfa6a99b74a33968eba4c8abad"
 
   def install
-    system "./configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--mandir=#{man}"
-    system "make install"
+    # Avoid ambiguous std::move issue with libc++
+    ENV.libstdcxx
+
+    system "./configure", "--disable-dependency-tracking",
+                          "--prefix=#{prefix}"
+    system "make", "install"
+  end
+
+  test do
+    system "#{bin}/cheops", "--version"
   end
 end

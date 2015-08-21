@@ -1,18 +1,24 @@
-require 'formula'
-
 class Fairymax < Formula
-  homepage 'http://home.hccnet.nl/h.g.muller/CVfairy.html'
-  # contents are same with 4.8S release, just dos2unix for Makefile, *.c and data/* and repackaging
-  url 'https://cavendishqi-chaos.googlecode.com/files/fairymax-4.8S.tar.gz'
-  sha1 'e1ab6850c4f98a8a7ba85899608a84e09b30175d'
-
-  # fix Makefile: change DESTDIR to fit with brew, directory detection and creation and etc
-  patch do
-    url "https://gist.github.com/liangqi/5469225/raw/f2672157782ca228f6336d0c76e25620d3039aac/Makefile.diff"
-    sha1 "9aeabd93d4d6b151dea4e2dd0549b5d6d646fb6b"
-  end
+  desc "AI for playing Chess variants"
+  homepage "http://www.chessvariants.org/index/msdisplay.php?itemid=MSfairy-max"
+  url "http://hgm.nubati.net/git/fairymax.git", :tag => "4.8V", :revision => "b12e1192005c781f64ed9c25c9825d20384d2468"
+  version "4.8V"
+  head "http://hgm.nubati.net/git/fairymax.git"
 
   def install
-    system "make", "install", "DESTDIR=#{prefix}"
+    system "make", "all",
+                   "INI_F=#{pkgshare}/fmax.ini",
+                   "INI_Q=#{pkgshare}/qmax.ini"
+    bin.install "fairymax", "shamax", "maxqi"
+    pkgshare.install Dir["data/*.ini"]
+    man6.install "fairymax.6.gz"
+  end
+
+  test do
+    (testpath/"test").write <<-EOS.undent
+      hint
+      quit
+    EOS
+    system "#{bin}/fairymax < test"
   end
 end

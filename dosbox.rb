@@ -1,26 +1,52 @@
-require 'formula'
-
 class Dosbox < Formula
-  homepage 'http://www.dosbox.com/'
-  url 'https://downloads.sourceforge.net/project/dosbox/dosbox/0.74/dosbox-0.74.tar.gz'
-  sha1 '2d99f0013350efb29b769ff19ddc8e4d86f4e77e'
+  desc "DOS Emulator"
+  homepage "http://www.dosbox.com/"
+  url "https://downloads.sourceforge.net/project/dosbox/dosbox/0.74/dosbox-0.74.tar.gz"
+  sha256 "13f74916e2d4002bad1978e55727f302ff6df3d9be2f9b0e271501bd0a938e05"
 
+  head do
+    url "http://svn.code.sf.net/p/dosbox/code-0/dosbox/trunk"
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+  end
+
+  option "with-debugger", "Enable internal debugger"
+
+  depends_on "sdl"
+  depends_on "sdl_net"
+  depends_on "sdl_sound" => ["--with-libogg", "--with-libvorbis"]
   depends_on "libpng"
-  depends_on 'sdl'
-  depends_on 'sdl_net'
-  depends_on 'sdl_sound'
 
   def install
-    ENV.fast
+    args = %W[
+      --prefix=#{prefix}
+      --disable-dependency-tracking
+      --disable-sdltest
+      --enable-core-inline
+    ]
+    args << "--enable-debug" if build.with? "debugger"
 
-    system "./configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--mandir=#{man}",
-                          "--disable-sdltest",
-                          "--enable-core-inline"
-    system "make"
+    if build.head?
+      # Prevent unstable build with clang
+      # http://sourceforge.net/p/dosbox/code-0/3894/
+      ENV.O0
+    else
+      # Disable dynamic cpu core recompilation that crashes on 64-bit platform
+      # https://github.com/Homebrew/homebrew-games/issues/171
+      args << "--disable-dynrec"
+    end
 
-    bin.install 'src/dosbox'
-    man1.install gzip('docs/dosbox.1')
+    system "./autogen.sh" if build.head?
+    system "./configure", *args
+    system "make", "install"
+  end
+
+  def caveats; <<-EOS.undent
+    DOSBox is not built for optimal performance due to unstability on 64-bit platform.
+    EOS
+  end
+
+  test do
+    system "#{bin}/dosbox", "-version"
   end
 end

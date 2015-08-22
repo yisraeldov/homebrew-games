@@ -5,6 +5,13 @@ class Openmsx < Formula
   sha256 "0d83ed98a0a121669b83e22f2a004f945c89ed315bf2f070e6e03d788c4e6512"
   head "https://github.com/openMSX/openMSX.git"
 
+  bottle do
+    cellar :any
+    sha256 "7152747329d9aff212d66c1a22898fc3d9e113a049f6ba888b7c87bac93405cc" => :yosemite
+    sha256 "25265b5bbe38716ab2147c05cd412ffb1e7f202db2eedcba2bc338611217ff19" => :mavericks
+    sha256 "ae9fa8361ffca294c613d15fdf614409242a34ddeea940a5874dbfaef4295425" => :mountain_lion
+  end
+
   option "without-opengl", "Disable OpenGL post-processing renderer"
   option "with-laserdisc", "Enable Laserdisc support"
 

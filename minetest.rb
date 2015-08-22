@@ -24,12 +24,12 @@ class Minetest < Formula
   end
 
   stable do
-    url "https://github.com/minetest/minetest/archive/0.4.12.tar.gz"
-    sha1 "1ea404afd37ca3496b6ad8a8c6ebc28a317fe54c"
+    url "https://github.com/minetest/minetest/archive/0.4.13.tar.gz"
+    sha256 "d77ee70c00a923c3ed2355536997f064a95143d0949a7fc92d725d079edef9f7"
 
     resource "minetest_game" do
-      url "https://github.com/minetest/minetest_game/archive/0.4.12.tar.gz"
-      sha1 "f088e2b1072055ae65f089e2f8d1bb083569d63f"
+      url "https://github.com/minetest/minetest_game/archive/0.4.13.tar.gz"
+      sha256 "8d1671484fcd62936ae15bf6a2f9fd9863a8fb010bdf8902ba63977395f3b613"
     end
   end
 
@@ -50,16 +50,10 @@ class Minetest < Formula
     args << "-DENABLE_FREETYPE=1" << "-DCMAKE_EXE_LINKER_FLAGS='-L#{Formula["freetype"].opt_lib}'" if build.with? "freetype"
     args << "-DENABLE_GETTEXT=1" << "-DCUSTOM_GETTEXT_PATH=#{Formula["gettext"].opt_prefix}" if build.with? "gettext"
 
-    # Their CMake cannot create simple app bundle now, but we may use "make
-    # package" to create .dmg package with bundle inside and then copy bundle
-    # from its tmp directory. Thus, we need to specify where to find it.
-    args << "-DCPACK_TOPLEVEL_TAG="
     system "cmake", ".", *args
-    # Still need to replace CPACK_PACKAGE_FILE_NAME via config
-    inreplace "CPackConfig.cmake", /\(CPACK_PACKAGE_FILE_NAME .+\)/, '(CPACK_PACKAGE_FILE_NAME "minetest")'
-
     system "make", "package"
-    prefix.install "_CPack_Packages/Bundle/minetest/minetest.app"
+    system "unzip", "minetest-*-osx.zip"
+    prefix.install "minetest.app"
   end
 
   def caveats; <<-EOS.undent

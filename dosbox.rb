@@ -4,6 +4,14 @@ class Dosbox < Formula
   url "https://downloads.sourceforge.net/project/dosbox/dosbox/0.74/dosbox-0.74.tar.gz"
   sha256 "13f74916e2d4002bad1978e55727f302ff6df3d9be2f9b0e271501bd0a938e05"
 
+  bottle do
+    cellar :any
+    revision 1
+    sha256 "be37f802731de6700dd47252c9d5f8c6693aaa47849bde69e687647b44ec7ac7" => :yosemite
+    sha256 "9c367cd50d5ace12040f9ce2b1dc1256b99a06be5d4ea32293b4a36eacb668c8" => :mavericks
+    sha256 "0f084aebb29fa7ea7825f1a230c4ec825b7a1ee112bce2e3e4d256a9e737ff44" => :mountain_lion
+  end
+
   head do
     url "http://svn.code.sf.net/p/dosbox/code-0/dosbox/trunk"
     depends_on "autoconf" => :build

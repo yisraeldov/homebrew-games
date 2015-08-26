@@ -2,8 +2,8 @@ require 'formula'
 
 class Mednafen < Formula
   homepage 'http://mednafen.sourceforge.net/'
-  url 'https://downloads.sourceforge.net/project/mednafen/Mednafen/0.9.36.5/mednafen-0.9.36.5.tar.bz2'
-  sha1 '02d441e18083daa539f0193121ac760882be9d19'
+  url 'https://downloads.sourceforge.net/project/mednafen/Mednafen/0.9.38.5/mednafen-0.9.38.5.tar.bz2'
+  sha1 'b6dff2ff97673e4183c5628d49b6ac05c341b325'
 
   bottle do
     sha1 "84e3203ab953fbed5a22499a2ad64aa6f17f4d80" => :yosemite

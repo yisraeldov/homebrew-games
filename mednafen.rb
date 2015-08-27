@@ -24,12 +24,14 @@ class Mednafen < Formula
     ENV['LD'] = '/usr/bin/gcc'
     ENV['CXX'] = '/usr/bin/g++'
     ENV['ac_ct_CXX'] = 'g++'
-    ENV.delete('CFLAGS')
     ENV.delete('CXXFLAGS')
     ENV.delete('MAKEFLAGS')
     ENV.delete('CPPFLAGS')
     ENV.delete('PKG_CONFIG_LIBDIR') 
     ENV.delete('PKG_CONFIG_PATH')
+    ENV.append_to_cflags "-stdlib=libc++"
+
+
 	
     system( "./configure --prefix=#{prefix} --disable-dependency-tracking --build=x86_64-apple-darwin`uname -r` " )
     system "make"

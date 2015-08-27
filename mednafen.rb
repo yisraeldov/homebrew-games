@@ -3,7 +3,7 @@ require 'formula'
 class Mednafen < Formula
   homepage 'http://mednafen.sourceforge.net/'
   url 'https://downloads.sourceforge.net/project/mednafen/Mednafen/0.9.38.5/mednafen-0.9.38.5.tar.bz2'
-  sha1 'b6dff2ff97673e4183c5628d49b6ac05c341b325'
+  sha256 '10c5e6ba0d822cf2e5aaa236ca86e6ec489a56043530ba3fdc20f70929e738e8'
 
   bottle do
     root_url "https://downloads.sf.net/project/machomebrew/Bottles/games"

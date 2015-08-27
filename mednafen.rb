@@ -2,8 +2,8 @@ require 'formula'
 
 class Mednafen < Formula
   homepage 'http://mednafen.sourceforge.net/'
-  url 'https://downloads.sourceforge.net/project/mednafen/Mednafen/0.9.36.5/mednafen-0.9.36.5.tar.bz2'
-  sha1 '02d441e18083daa539f0193121ac760882be9d19'
+  url 'https://downloads.sourceforge.net/project/mednafen/Mednafen/0.9.38.5/mednafen-0.9.38.5.tar.bz2'
+  sha1 'b6dff2ff97673e4183c5628d49b6ac05c341b325'
 
   bottle do
     root_url "https://downloads.sf.net/project/machomebrew/Bottles/games"
@@ -16,9 +16,23 @@ class Mednafen < Formula
   depends_on 'sdl'
   depends_on 'libcdio'
   depends_on 'libsndfile'
+  depends_on 'coreutils'
 
   def install
-    system "./configure", "--prefix=#{prefix}", "--disable-dependency-tracking"
+    # Force compilation with built in 
+    ENV['CC'] = '/usr/bin/gcc'
+    ENV['LD'] = '/usr/bin/gcc'
+    ENV['CXX'] = '/usr/bin/g++'
+    ENV['ac_ct_CXX'] = 'g++'
+    ENV.delete('CFLAGS')
+    ENV.delete('CXXFLAGS')
+    ENV.delete('MAKEFLAGS')
+    ENV.delete('CPPFLAGS')
+    ENV.delete('PKG_CONFIG_LIBDIR') 
+    ENV.delete('PKG_CONFIG_PATH')
+	
+    system( "./configure --prefix=#{prefix} --disable-dependency-tracking --build=x86_64-apple-darwin`uname -r` " )
+    system "make"
     system "make install"
   end
 end
